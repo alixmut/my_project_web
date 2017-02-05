@@ -1,0 +1,33 @@
+{
+    "name": "helios-ag/fm-elfinder-php-connector",
+    "description": "ElFinder PHP backend, 5.4 compliant",
+    "keywords": ["elfinder", "filemanager"],
+    "homepage": "http://github.com/helios-ag/ElFinderPHP",
+    "type": "library",
+    "license": "BSD-3 Clause",
+    "authors": [
+        {
+            "name": "Al Ganiev",
+            "email": "helios.ag@gmail.com"
+        },
+        {
+            "name": "ElFinder authors",
+            "homepage": "https://github.com/Studio-42/elFinder"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://github.com/helios-ag/ElFinderPHP/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "intervention/image": "^2.3"
+    },
+    "suggest": {
+        "dropbox-php/dropbox-php": "Allows you to use Dropbox storage",
+        "aws/aws-sdk-php": "Allows you to use AWS S3 storage"
+    },
+    "autoload": {
+        "psr-4": {"FM\\ElFinderPHP\\": "src/"}
+    }
+}
