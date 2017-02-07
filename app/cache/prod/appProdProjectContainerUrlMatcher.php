@@ -27,6 +27,15 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
         $context = $this->context;
         $request = $this->request;
 
+        // gudetama_france_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'gudetama_france_homepage');
+            }
+
+            return array (  '_controller' => 'GudetamaFranceBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gudetama_france_homepage',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

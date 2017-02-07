@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 			new FM\ElfinderBundle\FMElfinderBundle(),
             new AppBundle\AppBundle(),
+            new GudetamaFranceBundle\GudetamaFranceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

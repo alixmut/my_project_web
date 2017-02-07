@@ -92,6 +92,7 @@
   'FMElfinderBundle:Elfinder:tinymce.html.twig' => 'C:\\wamp\\www\\my_project_web\\vendor\\helios-ag\\fm-elfinder-bundle/Resources/views/Elfinder/tinymce.html.twig',
   'FMElfinderBundle:Elfinder:tinymce4.html.twig' => 'C:\\wamp\\www\\my_project_web\\vendor\\helios-ag\\fm-elfinder-bundle/Resources/views/Elfinder/tinymce4.html.twig',
   'FMElfinderBundle:Form:elfinder_widget.html.twig' => 'C:\\wamp\\www\\my_project_web\\vendor\\helios-ag\\fm-elfinder-bundle/Resources/views/Form/elfinder_widget.html.twig',
+  'GudetamaFranceBundle:Default:index.html.twig' => 'C:\\wamp\\www\\my_project_web\\src\\GudetamaFranceBundle/Resources/views/Default/index.html.twig',
   '::base.html.twig' => 'C:\\wamp\\www\\my_project_web\\app/Resources\\views/base.html.twig',
   ':default:index.html.twig' => 'C:\\wamp\\www\\my_project_web\\app/Resources\\views/default/index.html.twig',
 );
