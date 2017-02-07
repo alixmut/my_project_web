@@ -1,0 +1,3 @@
+gudetama_france_homepage:
+    path:     /
+    defaults: { _controller: GudetamaFranceBundle:Default:index }

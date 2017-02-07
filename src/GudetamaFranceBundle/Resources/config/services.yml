@@ -1,0 +1,4 @@
+services:
+#    gudetama_france.example:
+#        class: GudetamaFranceBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
