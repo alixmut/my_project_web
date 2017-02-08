@@ -13,9 +13,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-
-
-
         $dl = new YoutubeDl([
             'continue' => true, // force resume of partially downloaded files. By default, youtube-dl will resume downloads if possible.
             'audio-format' => 'mp3',

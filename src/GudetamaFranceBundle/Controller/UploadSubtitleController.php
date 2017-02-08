@@ -16,34 +16,39 @@ class UploadSubtitleController extends Controller
         $form = $this->createForm(UploadSubtitleType::class, $upload);
         $form->handleRequest($request);
 		$em = $this->getDoctrine()->getManager();
-        if ($form->isSubmitted() && $form->isValid()) {
-            // $file stores the uploaded PDF file
-            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
-            $file = $upload->getBrochure();
+		
+		if ($form->isSubmitted() && $form->isValid()) {
+			
+			// $file stores the uploaded srt file
+			/** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+			$file = $upload->getBrochure();
+																			//Si n'entre pas dans le if, fait des choses
+			if(strcmp($file->getClientOriginalExtension(), "srt") == 0) {	//Quand censé entrer dans le if, ne fait plus rien et ne sort pas
+				echo "<script>alert(\"Le fichier a été ajouté\")</script>";
+				// Generate a unique name for the file before saving it
+				$fileName = md5(uniqid()).'.'."srt";
 
-            // Generate a unique name for the file before saving it
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+				// Move the file to the directory where brochures are stored
+				$file->move(
+					$this->getParameter('brochures_directory'),
+					$fileName
+				);
 
-            // Move the file to the directory where brochures are stored
-            $file->move(
-                $this->getParameter('brochures_directory'),
-                $fileName
-            );
+				// Update the 'brochure' property to store the srt file name
+				// instead of its contents
+				$upload->setBrochure($fileName);
 
-            // Update the 'brochure' property to store the PDF file name
-            // instead of its contents
-            $upload->setBrochure($fileName);
-
-            // ... persist the $upload variable or any other work
-			/*$file = $product->getBrochure();
-			$fileName = $this->get('app.brochure_uploader')->upload($file);
-
-			$product->setBrochure($fileName);*/
-			$em->persist($upload);
-			$em->flush();
-            return $this->redirect('GudetamaFranceBundle:UploadSubtitle:upload_subtitle.html.twig');
-        }
+				// ... persist the $upload variable or any other work
+				/*$file = $product->getBrochure();
+				$fileName = $this->get('app.brochure_uploader')->upload($file);
+				$product->setBrochure($fileName);*/
+				$em->persist($upload);
+				$em->flush();
+				return $this->redirect('GudetamaFranceBundle:UploadSubtitle:upload_subtitle.html.twig');
+			}
+			else echo "<script>alert(\"Le fichier n'est pas un srt\")</script>";
+		}
 		return $this->render('GudetamaFranceBundle:UploadSubtitle:upload_subtitle.html.twig', array(
-            'form' => $form->createView(),));
+				'form' => $form->createView(),));
     }
 }

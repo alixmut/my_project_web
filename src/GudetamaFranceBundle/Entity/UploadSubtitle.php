@@ -21,8 +21,8 @@ class UploadSubtitle
     /**
      * @ORM\Column(type="string")
      *
-     * @Assert\NotBlank(message="Please, upload the product brochure as a SRT file.")
-     * @Assert\File(mimeTypes={ "srt" })
+     * @Assert\NotBlank(message="Please, upload the subtitle file as a SRT file.")
+     * @Assert\File(mimeTypes={ "text/plain" })
      */
     private $brochure;
 
@@ -33,7 +33,7 @@ class UploadSubtitle
 
     public function setBrochure($brochure)
     {
-        $this->brochure = $brochure;
+		$this->brochure = $brochure;
 
         return $this;
     }

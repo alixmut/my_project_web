@@ -17,7 +17,7 @@ class UploadSubtitleType extends AbstractType
         $builder
             // ...
 			->add('save', SubmitType::class, array('attr' => array('class' => 'save')))						
-            ->add('brochure', FileType::class, array('label' => 'Brochure (PDF file)'))
+            ->add('brochure', FileType::class, array('label' => 'Subtitles (SRT file)'))
             // ...
         ;
     }
