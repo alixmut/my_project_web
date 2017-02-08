@@ -2,12 +2,23 @@
 
 namespace GudetamaFranceBundle\Controller;
 
+require __DIR__ . '/vendor/autoload.php';
+
+use YoutubeDl\YoutubeDl;
+use YoutubeDl\Exception\CopyrightException;
+use YoutubeDl\Exception\NotFoundException;
+use YoutubeDl\Exception\PrivateVideoException;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
     public function indexAction()
     {
+
+
+
+
         return $this->render('GudetamaFranceBundle:Default:index.html.twig');
     }
 

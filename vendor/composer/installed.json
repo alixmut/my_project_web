@@ -2653,79 +2653,6 @@
         ]
     },
     {
-        "name": "doctrine/dbal",
-        "version": "v2.5.11",
-        "version_normalized": "2.5.11.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/doctrine/dbal.git",
-            "reference": "1b1effbddbdc0f40d1c8f849f44bcddac4f52a48"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/dbal/zipball/1b1effbddbdc0f40d1c8f849f44bcddac4f52a48",
-            "reference": "1b1effbddbdc0f40d1c8f849f44bcddac4f52a48",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/common": ">=2.4,<2.8-dev",
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "4.*",
-            "symfony/console": "2.*||^3.0"
-        },
-        "suggest": {
-            "symfony/console": "For helpful console commands such as SQL execution and import of files."
-        },
-        "time": "2017-02-04T21:20:13+00:00",
-        "bin": [
-            "bin/doctrine-dbal"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.5.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Doctrine\\DBAL\\": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
-                "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de"
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com"
-            },
-            {
-                "name": "Jonathan Wage",
-                "email": "jonwage@gmail.com"
-            }
-        ],
-        "description": "Database Abstraction Layer",
-        "homepage": "http://www.doctrine-project.org",
-        "keywords": [
-            "database",
-            "dbal",
-            "persistence",
-            "queryobject"
-        ]
-    },
-    {
         "name": "doctrine/orm",
         "version": "v2.5.6",
         "version_normalized": "2.5.6.0",
@@ -3466,6 +3393,606 @@
         "homepage": "http://developers.google.com/api-client-library/php",
         "keywords": [
             "google"
+        ]
+    },
+    {
+        "name": "evenement/evenement",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/igorw/evenement.git",
+            "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/igorw/evenement/zipball/f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
+            "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2012-11-02T14:49:47+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Evenement": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch",
+                "homepage": "http://wiedler.ch/igor/"
+            }
+        ],
+        "description": "Événement is a very simple event dispatching library for PHP",
+        "keywords": [
+            "event-dispatcher",
+            "event-emitter"
+        ]
+    },
+    {
+        "name": "react/stream",
+        "version": "v0.4.6",
+        "version_normalized": "0.4.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/stream.git",
+            "reference": "44dc7f51ea48624110136b535b9ba44fd7d0c1ee"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/stream/zipball/44dc7f51ea48624110136b535b9ba44fd7d0c1ee",
+            "reference": "44dc7f51ea48624110136b535b9ba44fd7d0c1ee",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "^2.0|^1.0",
+            "php": ">=5.3.8"
+        },
+        "require-dev": {
+            "clue/stream-filter": "~1.2",
+            "react/event-loop": "^0.4|^0.3",
+            "react/promise": "^2.0|^1.0"
+        },
+        "suggest": {
+            "react/event-loop": "^0.4",
+            "react/promise": "^2.0"
+        },
+        "time": "2017-01-25T14:44:14+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Stream\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Basic readable and writable stream interfaces that support piping.",
+        "keywords": [
+            "pipe",
+            "stream"
+        ]
+    },
+    {
+        "name": "react/event-loop",
+        "version": "v0.4.2",
+        "version_normalized": "0.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/event-loop.git",
+            "reference": "164799f73175e1c80bba92a220ea35df6ca371dd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/event-loop/zipball/164799f73175e1c80bba92a220ea35df6ca371dd",
+            "reference": "164799f73175e1c80bba92a220ea35df6ca371dd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "suggest": {
+            "ext-event": "~1.0",
+            "ext-libev": "*",
+            "ext-libevent": ">=0.1.0"
+        },
+        "time": "2016-03-08T02:09:32+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\EventLoop\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Event loop abstraction layer that libraries can use for evented I/O.",
+        "keywords": [
+            "asynchronous",
+            "event-loop"
+        ]
+    },
+    {
+        "name": "react/socket",
+        "version": "v0.4.6",
+        "version_normalized": "0.4.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/socket.git",
+            "reference": "cf074e53c974df52388ebd09710a9018894745d2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/socket/zipball/cf074e53c974df52388ebd09710a9018894745d2",
+            "reference": "cf074e53c974df52388ebd09710a9018894745d2",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "~2.0|~1.0",
+            "php": ">=5.3.0",
+            "react/event-loop": "0.4.*|0.3.*",
+            "react/promise": "^2.0 || ^1.1",
+            "react/stream": "^0.4.5"
+        },
+        "require-dev": {
+            "clue/block-react": "^1.1",
+            "phpunit/phpunit": "~4.8",
+            "react/socket-client": "^0.5.1"
+        },
+        "time": "2017-01-26T09:23:38+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Socket\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Async, streaming plaintext TCP/IP and secure TLS socket server for React PHP",
+        "keywords": [
+            "Socket"
+        ]
+    },
+    {
+        "name": "react/cache",
+        "version": "v0.4.1",
+        "version_normalized": "0.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/cache.git",
+            "reference": "558f614891341b1d817a8cdf9a358948ec49638f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/cache/zipball/558f614891341b1d817a8cdf9a358948ec49638f",
+            "reference": "558f614891341b1d817a8cdf9a358948ec49638f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "react/promise": "~2.0|~1.1"
+        },
+        "time": "2016-02-25T18:17:16+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Cache\\": "src\\"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Async caching.",
+        "keywords": [
+            "cache"
+        ]
+    },
+    {
+        "name": "react/dns",
+        "version": "v0.4.3",
+        "version_normalized": "0.4.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/dns.git",
+            "reference": "751b3129556e04944f164e3556a20ca6e201e459"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/dns/zipball/751b3129556e04944f164e3556a20ca6e201e459",
+            "reference": "751b3129556e04944f164e3556a20ca6e201e459",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "react/cache": "~0.4.0|~0.3.0",
+            "react/promise": "~2.1|~1.2",
+            "react/socket": "~0.4.0|~0.3.0"
+        },
+        "time": "2016-08-01T10:09:07+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Dns\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Async DNS resolver.",
+        "keywords": [
+            "dns",
+            "dns-resolver"
+        ]
+    },
+    {
+        "name": "react/socket-client",
+        "version": "v0.4.6",
+        "version_normalized": "0.4.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/socket-client.git",
+            "reference": "49e730523b73d912e56f7a41f53ed3fc083ae167"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/socket-client/zipball/49e730523b73d912e56f7a41f53ed3fc083ae167",
+            "reference": "49e730523b73d912e56f7a41f53ed3fc083ae167",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "react/dns": "0.4.*",
+            "react/event-loop": "0.4.*",
+            "react/promise": "~2.0",
+            "react/stream": "0.4.*"
+        },
+        "time": "2016-12-06T10:54:49+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\SocketClient\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Async connector to open TCP/IP and SSL/TLS based connections.",
+        "keywords": [
+            "Socket"
+        ]
+    },
+    {
+        "name": "react/http",
+        "version": "v0.4.2",
+        "version_normalized": "0.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/http.git",
+            "reference": "abedac54967d7ea237ad104cff8274e2c4077cf4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/http/zipball/abedac54967d7ea237ad104cff8274e2c4077cf4",
+            "reference": "abedac54967d7ea237ad104cff8274e2c4077cf4",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "^2.0",
+            "guzzlehttp/psr7": "^1.0",
+            "php": ">=5.4.0",
+            "react/socket": "^0.4",
+            "react/stream": "^0.4"
+        },
+        "time": "2016-11-09T15:20:39+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Http\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Library for building an evented http server.",
+        "keywords": [
+            "http"
+        ]
+    },
+    {
+        "name": "react/http-client",
+        "version": "v0.4.15",
+        "version_normalized": "0.4.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/http-client.git",
+            "reference": "01e919008363622334f91419a9908b3a51754ccd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/http-client/zipball/01e919008363622334f91419a9908b3a51754ccd",
+            "reference": "01e919008363622334f91419a9908b3a51754ccd",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "~2.0",
+            "guzzlehttp/psr7": "^1.0",
+            "php": ">=5.4.0",
+            "react/dns": "0.4.*",
+            "react/event-loop": "0.4.*",
+            "react/promise": "~2.2",
+            "react/socket-client": "^0.5 || ^0.4 || ^0.3",
+            "react/stream": "0.4.*"
+        },
+        "time": "2016-12-02T10:17:42+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\HttpClient\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Asynchronous HTTP client library.",
+        "keywords": [
+            "http"
+        ]
+    },
+    {
+        "name": "react/child-process",
+        "version": "v0.4.1",
+        "version_normalized": "0.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/child-process.git",
+            "reference": "3ab4f83c6f6c5862f7ca28d999a92d327472a671"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/child-process/zipball/3ab4f83c6f6c5862f7ca28d999a92d327472a671",
+            "reference": "3ab4f83c6f6c5862f7ca28d999a92d327472a671",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "~2.0",
+            "php": ">=5.4.0",
+            "react/event-loop": "0.4.*",
+            "react/stream": "~0.4.2"
+        },
+        "require-dev": {
+            "sebastian/environment": "~1.0"
+        },
+        "time": "2016-08-01T18:09:48+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\ChildProcess\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Library for executing child processes.",
+        "keywords": [
+            "process"
+        ]
+    },
+    {
+        "name": "react/react",
+        "version": "v0.4.2",
+        "version_normalized": "0.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/react.git",
+            "reference": "457b6b8a16a37c11278cac0870d6d2ff911c5765"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/react/zipball/457b6b8a16a37c11278cac0870d6d2ff911c5765",
+            "reference": "457b6b8a16a37c11278cac0870d6d2ff911c5765",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "react/cache": "0.4.*",
+            "react/child-process": "0.4.*",
+            "react/dns": "0.4.*",
+            "react/event-loop": "0.4.*",
+            "react/http": "0.4.*",
+            "react/http-client": "0.4.*",
+            "react/promise": "~2.1",
+            "react/socket": "0.4.*",
+            "react/socket-client": "0.4.*",
+            "react/stream": "0.4.*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "ext-event": "Allows for use of a more performant event-loop implementation.",
+            "ext-libev": "Allows for use of a more performant event-loop implementation.",
+            "ext-libevent": "Allows for use of a more performant event-loop implementation."
+        },
+        "time": "2014-12-11T02:06:55+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Nuclear Reactor written in PHP.",
+        "keywords": [
+            "asynchronous",
+            "event-loop",
+            "reactor"
+        ]
+    },
+    {
+        "name": "doctrine/dbal",
+        "version": "v2.5.12",
+        "version_normalized": "2.5.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/dbal.git",
+            "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/dbal/zipball/7b9e911f9d8b30d43b96853dab26898c710d8f44",
+            "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/common": ">=2.4,<2.8-dev",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*",
+            "symfony/console": "2.*||^3.0"
+        },
+        "suggest": {
+            "symfony/console": "For helpful console commands such as SQL execution and import of files."
+        },
+        "time": "2017-02-08T12:53:47+00:00",
+        "bin": [
+            "bin/doctrine-dbal"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.5.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\DBAL\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            }
+        ],
+        "description": "Database Abstraction Layer",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "database",
+            "dbal",
+            "persistence",
+            "queryobject"
+        ]
+    },
+    {
+        "name": "norkunas/youtube-dl-php",
+        "version": "v0.3.0",
+        "version_normalized": "0.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/norkunas/youtube-dl-php.git",
+            "reference": "b86b29c9f54536311036aed666b6993d68b10cc2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/norkunas/youtube-dl-php/zipball/b86b29c9f54536311036aed666b6993d68b10cc2",
+            "reference": "b86b29c9f54536311036aed666b6993d68b10cc2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4",
+            "symfony/options-resolver": "^2.7|~3.0",
+            "symfony/process": "^2.7|~3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.5"
+        },
+        "time": "2016-09-08T08:05:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "YoutubeDl\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tomas Norkūnas",
+                "email": "norkunas.tom@gmail.com"
+            }
+        ],
+        "description": "youtube-dl wrapper for php",
+        "keywords": [
+            "youtube",
+            "youtube-dl"
         ]
     }
 ]
