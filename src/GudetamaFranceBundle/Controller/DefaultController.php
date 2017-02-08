@@ -17,30 +17,9 @@ class DefaultController extends Controller
 
     public function indexAction()
     {
-<<<<<<< HEAD
-        $dl = new YoutubeDl([
-            'continue' => true, // force resume of partially downloaded files. By default, youtube-dl will resume downloads if possible.
-            'audio-format' => 'mp3',
-            'format' => 'bestvideo',
-        ]);
-// For more options go to https://github.com/rg3/youtube-dl#user-content-options
 
-        $dl->setDownloadPath('C:\wamp\www\my_project_web');
-// Enable debugging
-=======
         exec('C:\wamp\bin\php\youtube-dl -o C:/wamp/www/my_project_web/web/%(title)s.%(ext)s --format mp4 https://www.youtube.com/watch?v=D4hAVemuQXY');
-       // while ($process->isRunning())
-// Enable debugging_
->>>>>>> 3519d8157d9a3558f24170eb49f6e4931bc759fe
-        /*$dl->debug(function ($type, $buffer) {
-            if (\Symfony\Component\Process\Process::ERR === $type) {
-                echo 'ERR > ' . $buffer;
-            } else {
-                echo 'OUT > ' . $buffer;
-            }
-        });*/
-
-
+        
         return $this->render('GudetamaFranceBundle:Default:index.html.twig');
     }
 
