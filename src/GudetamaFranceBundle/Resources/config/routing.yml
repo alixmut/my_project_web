@@ -1,3 +1,11 @@
 gudetama_france_homepage:
     path:     /
     defaults: { _controller: GudetamaFranceBundle:Default:index }
+    
+youtube_homepage:
+    path:     /get_playlist_youtube
+    defaults: { _controller: GudetamaFranceBundle:Default:getPlaylistYoutube }
+
+gudetama_france_upload_subtitle:
+    path:     /upload_subtitle
+    defaults: { _controller: GudetamaFranceBundle:UploadSubtitle:upload_subtitle }

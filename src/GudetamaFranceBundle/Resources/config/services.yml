@@ -2,3 +2,7 @@ services:
 #    gudetama_france.example:
 #        class: GudetamaFranceBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+    # ...
+    app.brochure_uploader:
+        class: GudetamaFranceBundle\FileUploader
+        arguments: ['%brochures_directory%']

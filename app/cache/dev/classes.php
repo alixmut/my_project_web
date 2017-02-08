@@ -2151,11 +2151,15 @@ if (0 === count($arguments)) {
 $r = new \ReflectionObject($controller);
 $arguments = array();
 foreach ($r->getMethod($action)->getParameters() as $param) {
-$arguments[] = $param->getName();
+$arguments[] = $param;
 }
 }
 foreach ($arguments as $argument) {
+if ($argument instanceof \ReflectionParameter) {
+$parameters[$name = $argument->getName()] = !$request->attributes->has($name) && $argument->isDefaultValueAvailable() ? $argument->getDefaultValue() : $request->attributes->get($name);
+} else {
 $parameters[$argument] = $request->attributes->get($argument);
+}
 }
 return $parameters;
 }
@@ -2193,11 +2197,11 @@ return false;
 if (isset($options['format'])) {
 $date = DateTime::createFromFormat($options['format'], $value);
 if (!$date) {
-throw new NotFoundHttpException('Invalid date given.');
+throw new NotFoundHttpException(sprintf('Invalid date given for parameter "%s".', $param));
 }
 } else {
 if (false === strtotime($value)) {
-throw new NotFoundHttpException('Invalid date given.');
+throw new NotFoundHttpException(sprintf('Invalid date given for parameter "%s".', $param));
 }
 $date = new DateTime($value);
 }
@@ -2240,7 +2244,7 @@ if (false === $object = $this->findOneBy($class, $request, $options)) {
 if ($configuration->isOptional()) {
 $object = null;
 } else {
-throw new \LogicException('Unable to guess how to get a Doctrine instance from the request information.');
+throw new \LogicException(sprintf('Unable to guess how to get a Doctrine instance from the request information for parameter "%s".', $name));
 }
 }
 }

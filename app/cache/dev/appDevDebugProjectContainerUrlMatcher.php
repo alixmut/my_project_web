@@ -114,6 +114,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'GudetamaFranceBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gudetama_france_homepage',);
         }
 
+        // youtube_homepage
+        if ($pathinfo === '/get_playlist_youtube') {
+            return array (  '_controller' => 'GudetamaFranceBundle\\Controller\\DefaultController::getPlaylistYoutubeAction',  '_route' => 'youtube_homepage',);
+        }
+
+        // gudetama_france_upload_subtitle
+        if ($pathinfo === '/upload_subtitle') {
+            return array (  '_controller' => 'GudetamaFranceBundle\\Controller\\UploadSubtitleController::upload_subtitleAction',  '_route' => 'gudetama_france_upload_subtitle',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
