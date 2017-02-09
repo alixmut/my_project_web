@@ -20,7 +20,7 @@ class DefaultController extends Controller
 
         exec('C:\wamp\bin\php\youtube-dl -o C:/wamp/www/my_project_web/web/%(title)s.%(ext)s --format mp4 https://www.youtube.com/watch?v=D4hAVemuQXY');
         
-        return $this->render('GudetamaFranceBundle:Default:index.html.twig');
+        return $this->render('GudetamaFranceBundle:pages:index.html.twig');
     }
 
 	public function getPlaylistYoutubeAction() {
@@ -56,7 +56,7 @@ class DefaultController extends Controller
 
 
 	var_dump($videos);
-return $this->render('GudetamaFranceBundle:Default:index.html.twig');
+return $this->render('GudetamaFranceBundle:pages:index.html.twig');
    /* return array(
         'youtube_videos' => $videos,
         'youtube_channels' => $channels,

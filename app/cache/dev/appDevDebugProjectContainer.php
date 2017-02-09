@@ -728,7 +728,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_940378e0a3fa3725b79f87cdc14368cd96507760a85f2edd52a57fbc637fda11');
+        $instance->setNamespace('sf2orm_default_c4f36257da4b2f717af98b40a0d42d6d9398bef522baa66f9977104e42b6ac03');
 
         return $instance;
     }
@@ -745,7 +745,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_940378e0a3fa3725b79f87cdc14368cd96507760a85f2edd52a57fbc637fda11');
+        $instance->setNamespace('sf2orm_default_c4f36257da4b2f717af98b40a0d42d6d9398bef522baa66f9977104e42b6ac03');
 
         return $instance;
     }
@@ -762,7 +762,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_940378e0a3fa3725b79f87cdc14368cd96507760a85f2edd52a57fbc637fda11');
+        $instance->setNamespace('sf2orm_default_c4f36257da4b2f717af98b40a0d42d6d9398bef522baa66f9977104e42b6ac03');
 
         return $instance;
     }
@@ -803,7 +803,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFmElfinder_Configurator_DefaultService()
     {
-        return $this->services['fm_elfinder.configurator.default'] = new \FM\ElfinderBundle\Configuration\ElFinderConfigurationReader(array('instances' => array('default' => array('locale' => 'fr', 'editor' => 'ckeditor', 'include_assets' => true, 'connector' => array('roots' => array('uploads' => array('driver' => 'LocalFileSystem', 'path' => 'uploads', 'upload_allow' => array(0 => 'image/png', 1 => 'image/jpg', 2 => 'image/jpeg', 3 => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 4 => 'avi'), 'upload_deny' => array(0 => 'all'), 'upload_max_size' => '2M', 'volume_id' => 0, 'start_path' => '', 'url' => '', 'alias' => '', 'mime_detect' => 'auto', 'mimefile' => '', 'img_lib' => 'auto', 'tmb_path' => '.tmb', 'tmb_path_mode' => 511, 'tmb_url' => '', 'tmb_size' => 48, 'tmb_crop' => true, 'tmb_bg_color' => '#ffffff', 'copy_overwrite' => true, 'copy_join' => true, 'copy_from' => true, 'copy_to' => true, 'upload_overwrite' => true, 'fileMode' => 420, 'upload_order' => array(0 => 'deny', 1 => 'allow'), 'defaults' => array('read' => true, 'write' => true), 'attributes' => array(), 'accepted_name' => '/^\\w[\\w\\s\\.\\%\\-]*$/u', 'show_hidden' => false, 'disabled_commands' => array(), 'tree_deep' => 0, 'check_subfolders' => true, 'separator' => '\\', 'date_format' => 'j M Y H:i', 'time_format' => 'H:i', 'archive_mimes' => array(), 'archivers' => array('enabled' => false, 'create' => array(), 'extract' => array()), 'flysystem' => array('enabled' => false, 'type' => '', 'adapter_service' => ''), 'glide_url' => '', 'glide_key' => '', 'plugins' => array(), 'driver_options' => array(), 'dropbox_settings' => array('enabled' => false), 'ftp_settings' => array('enabled' => false), 's3_settings' => array('enabled' => false))), 'debug' => false, 'binds' => array(), 'plugins' => array()), 'cors_support' => false, 'editor_template' => NULL, 'fullscreen' => true, 'theme' => 'smoothness', 'tinymce_popup_path' => '', 'relative_path' => true, 'path_prefix' => '/', 'visible_mime_types' => array())), 'configuration_provider' => 'fm_elfinder.configurator.default', 'assets_path' => '/assets', 'loader' => 'fm_elfinder.loader.default'), $this->get('request_stack'), $this);
+        return $this->services['fm_elfinder.configurator.default'] = new \FM\ElfinderBundle\Configuration\ElFinderConfigurationReader(array('instances' => array('default' => array('locale' => 'fr', 'editor' => 'ckeditor', 'include_assets' => true, 'connector' => array('roots' => array('uploads' => array('driver' => 'LocalFileSystem', 'path' => 'uploads', 'upload_allow' => array(0 => 'image/png', 1 => 'image/jpg', 2 => 'image/jpeg', 3 => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 4 => 'avi', 5 => 'mp4'), 'upload_deny' => array(0 => 'all'), 'upload_max_size' => '2M', 'volume_id' => 0, 'start_path' => '', 'url' => '', 'alias' => '', 'mime_detect' => 'auto', 'mimefile' => '', 'img_lib' => 'auto', 'tmb_path' => '.tmb', 'tmb_path_mode' => 511, 'tmb_url' => '', 'tmb_size' => 48, 'tmb_crop' => true, 'tmb_bg_color' => '#ffffff', 'copy_overwrite' => true, 'copy_join' => true, 'copy_from' => true, 'copy_to' => true, 'upload_overwrite' => true, 'fileMode' => 420, 'upload_order' => array(0 => 'deny', 1 => 'allow'), 'defaults' => array('read' => true, 'write' => true), 'attributes' => array(), 'accepted_name' => '/^\\w[\\w\\s\\.\\%\\-]*$/u', 'show_hidden' => false, 'disabled_commands' => array(), 'tree_deep' => 0, 'check_subfolders' => true, 'separator' => '\\', 'date_format' => 'j M Y H:i', 'time_format' => 'H:i', 'archive_mimes' => array(), 'archivers' => array('enabled' => false, 'create' => array(), 'extract' => array()), 'flysystem' => array('enabled' => false, 'type' => '', 'adapter_service' => ''), 'glide_url' => '', 'glide_key' => '', 'plugins' => array(), 'driver_options' => array(), 'dropbox_settings' => array('enabled' => false), 'ftp_settings' => array('enabled' => false), 's3_settings' => array('enabled' => false))), 'debug' => false, 'binds' => array(), 'plugins' => array()), 'cors_support' => false, 'editor_template' => NULL, 'fullscreen' => true, 'theme' => 'smoothness', 'tinymce_popup_path' => '', 'relative_path' => true, 'path_prefix' => '/', 'visible_mime_types' => array())), 'configuration_provider' => 'fm_elfinder.configurator.default', 'assets_path' => '/assets', 'loader' => 'fm_elfinder.loader.default'), $this->get('request_stack'), $this);
     }
 
     /**
@@ -2145,7 +2145,7 @@ class appDevDebugProjectContainer extends Container
 
         $e = new \Symfony\Component\Security\Http\AccessMap();
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '589b8346c9f286.29912232', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '589c5725ee0783.50359097', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
     }
 
     /**
@@ -3538,7 +3538,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('589b8346c9f286.29912232')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('589c5725ee0783.50359097')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -4287,6 +4287,7 @@ class appDevDebugProjectContainer extends Container
                                         2 => 'image/jpeg',
                                         3 => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
                                         4 => 'avi',
+                                        5 => 'mp4',
                                     ),
                                     'upload_deny' => array(
                                         0 => 'all',
