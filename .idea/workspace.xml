@@ -2,134 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9883c9e6-a4dc-46cb-b3f2-92a260f9f62c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/078f02289eae82f58e4cde541fbf7a24.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/111086db56dc2f44a0817afefe84dd28.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/181026e3b9c69d77a9d0e169d59f1a1a.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/1e2df13ca2fd55ff64e13c39a1cba697.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/1eef4affc0f7d9cbc89cdd141f2eb74f.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/2022dffa1cfc61dff8faf5af54758aa0.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/22ca07989a64949bc586b98664a15611.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/2c7f3903e289bdcd36b3fcfe36d9b669.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/378d4efecf70ddd3bc224c5513b26089.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/383e8b534a78f9e71c3122a4cdce2692.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/4d35de1fa8d794541b7c4ebd54d668b3.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/4e3a7df87e55b4d05ef5e077134d0bc6.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/56e6f6bb1c07b78a386557ca1507baaf.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/57a0e6af00302d07fb3dd406388a07d2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/59332090bbdf4a169aac8c1e135525f0.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/59839cec16de9a762e8c257eec9cc302.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/6257b39825f59728c9f4d466c1d6aa85.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/669ab360a3ef083249382455ba1b90e5.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/6e1bed91ea58b619f4c0a92b0bf31ebc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/73579a6ed31bee397a98a0ec8374ba44.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/74e4704f715b988468b6b2689c9def08.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/7f585595ede56ae298837f4ceefcd376.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/85f243d3e5f6236823dd1a96ae626c70.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/86ba0663eb0deb4705d4ae59f5246faa.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/8e7a5fbcaba6683c79ee1bb669fd817b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/98be0a03e20ad2115fe95e60b37451d1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/a1bff4ecdd6916220196fd8cfaba3e5b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/a297d0e5b2a1331ffe0d8153bf287ffe.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/a3e2914940a9846c552215eafe8a76af.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/a4282dc7c13930adce84be826c868995.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/aa9dfd89c8a560a031e87236384d9419.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/aea8ca9dc405c6f63620ec95e647336e.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/b268e6cdbb73f6e3464bd5d62b5dacb0.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/b6230aa9ee76a5492cafff4e5c7c8b01.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/b86455963f937daa811a632ac7d0a100.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/b8d4330b9ece3de785f4392f166299d8.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/cca5a4d210fbd0e9801c9c0621c32ba9.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/d5592fbcfc7c2818a6fdf7f0ec873af5.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/d60a99e83c78ccaa789e5b64629f9cda.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/d6d3ebd5d298ae8078bf56710fe55c3c.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/d805987bc899a076fe7050b21df7a48b.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/d9009815dcf125415511a12059073aca.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/dd4392f8d2bef22832bcac31afa4f117.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/de6881ed57480f0adea0118ee911e44e.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/dfac41e1c4d99a9cd559c84c2edccdbf.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/e40947f8d8c473efc183dfbda7efc830.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/e76cd55aa53bb1b30dd06dc66660e3e6.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/ed62000281c9526f013e5594adf11848.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/f1332d237a69a008ccdb9f6d81111f8e.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/f1b126614303fbcaa85f14b79e663d58.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/f27b13227090ed4ccf7b62cc7760c1aa.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/f3a01fe21dfed091ec20a498375c8a4f.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/fc7037baf910ee0cba706aeea4990c09.srt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/fce854d47f8b7bfd473c2d8427cdad73.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/brochures/ff16be334d60ab110b942c6a2fe8f2df.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/41/5b5b435d4775646574616d614672616e636542756e646c655c436f6e74726f6c6c65725c44656661756c74436f6e74726f6c6c657223696e646578416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/41/5b5b435d4775646574616d614672616e636542756e646c655c436f6e74726f6c6c65725c44656661756c74436f6e74726f6c6c657223696e646578416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/79/_796dd7c51422c5ab098df53f53ffc5382f9d913aa13c80c652dde38412c09af0.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/79/_796dd7c51422c5ab098df53f53ffc5382f9d913aa13c80c652dde38412c09af0.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/fe/5b5b435d4775646574616d614672616e636542756e646c655c436f6e74726f6c6c65725c44656661756c74436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/fe/5b5b435d4775646574616d614672616e636542756e646c655c436f6e74726f6c6c65725c44656661756c74436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/classes.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/01/0131d5af99aab42018cd5f2093dcb9da32c690bc4f3e1429e87be5147ddb6c13.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/01/0131d5af99aab42018cd5f2093dcb9da32c690bc4f3e1429e87be5147ddb6c13.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/02/023c2d0247d53fad9f2a7af82fa50f33fd2e003d26d6c8fca0c68baa4aea769f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/02/023c2d0247d53fad9f2a7af82fa50f33fd2e003d26d6c8fca0c68baa4aea769f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/09/09c1c9ab354faee07f641c7fecb9c2b3d09a34cfedd083cd437daa2845fd8a70.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/09/09c1c9ab354faee07f641c7fecb9c2b3d09a34cfedd083cd437daa2845fd8a70.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b0139976c4f6dac2e80a711f346d6bde8b1b4efd0e38f334d75035e6a5e1de9.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b0139976c4f6dac2e80a711f346d6bde8b1b4efd0e38f334d75035e6a5e1de9.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0c/0cd51ede2b53442d60e9f559c0569ca7973539bd2107a45618090066a934e947.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0c/0cd51ede2b53442d60e9f559c0569ca7973539bd2107a45618090066a934e947.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/14/1432a49aceaf27c909960ea1173e1dff8c788b73892c7942c27af170d43baabb.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/14/1432a49aceaf27c909960ea1173e1dff8c788b73892c7942c27af170d43baabb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/15/156a43aba585647b083e5e9495b8b2200f36a71fd4b39f083f4f23eed5ced26e.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/15/156a43aba585647b083e5e9495b8b2200f36a71fd4b39f083f4f23eed5ced26e.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/26/2620991f01f7501d0ed4d564157f4621ba99321ac5bfd828d8d3c239f0d61a19.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/26/2620991f01f7501d0ed4d564157f4621ba99321ac5bfd828d8d3c239f0d61a19.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/26/2626121a3fe0de426358f61afcc2039c5f40d0ea33693ffe3f90129346169a7a.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/26/2626121a3fe0de426358f61afcc2039c5f40d0ea33693ffe3f90129346169a7a.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/27/27ab33366d65879ab35d6571375eb421115c709c2544afeca113b0773352e21f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/27/27ab33366d65879ab35d6571375eb421115c709c2544afeca113b0773352e21f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/2f/2f1c0e0a0db9eeea456a5b581c3386e6ec03341e01f79229937132672a68eaca.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/2f/2f1c0e0a0db9eeea456a5b581c3386e6ec03341e01f79229937132672a68eaca.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/32/320614ceeed221e6967da770f1d1f85d2a5dde92f0db9ef87a47ac0c763e6520.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/32/320614ceeed221e6967da770f1d1f85d2a5dde92f0db9ef87a47ac0c763e6520.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/3a/3ae541710bdcdba1b1e45b8b0d4a8e0a6df8186562687fb62d388e34510ea994.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/3a/3ae541710bdcdba1b1e45b8b0d4a8e0a6df8186562687fb62d388e34510ea994.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/3b/3b0598f1cd640bfac80a4660baf27ef237b3d626509477510bd673d59691dddf.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/3b/3b0598f1cd640bfac80a4660baf27ef237b3d626509477510bd673d59691dddf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/3c/3c1b6debc172a99f8a1dbafa531da322120a52195e993ad80b48a0c1f040b4aa.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/3c/3c1b6debc172a99f8a1dbafa531da322120a52195e993ad80b48a0c1f040b4aa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/3d/3df128843b6214ee9c8ab1cb012ba0c2e9244e88b3214b99e3a0982aa4cd79d5.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/3d/3df128843b6214ee9c8ab1cb012ba0c2e9244e88b3214b99e3a0982aa4cd79d5.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/3e/3e1a1a97d71e5c4f7533535bad5057a986bd9428aaee476fac324c6bf83aec74.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/3e/3e1a1a97d71e5c4f7533535bad5057a986bd9428aaee476fac324c6bf83aec74.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/40/400b095d3ae4eeb0c040dad5dc2edbfcd726d3885340ef48692d5be43de27491.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/40/400b095d3ae4eeb0c040dad5dc2edbfcd726d3885340ef48692d5be43de27491.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5a/5afab57c29593460dcebe7e1e100e3b82d2869e2b4bb63cc6886bfb935c58090.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5a/5afab57c29593460dcebe7e1e100e3b82d2869e2b4bb63cc6886bfb935c58090.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5f/5f2fb4a95eee4b877895b079ae2b9d0593a025e29aff4223ce85a80fdef1edf6.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5f/5f2fb4a95eee4b877895b079ae2b9d0593a025e29aff4223ce85a80fdef1edf6.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/62/62bdb628a02f3dae41caced32d3fe068cbf10ddbeaa62026ae66848a118cbc6e.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/62/62bdb628a02f3dae41caced32d3fe068cbf10ddbeaa62026ae66848a118cbc6e.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/75/75365b8cdd2dcc3ab9649daff3331861c656c9035ac849f822b1025bca74f04f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/75/75365b8cdd2dcc3ab9649daff3331861c656c9035ac849f822b1025bca74f04f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/79/79df21b77278966ffa7f2a95c040a40bb91af967264973e553b3252bec974e1d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/79/79df21b77278966ffa7f2a95c040a40bb91af967264973e553b3252bec974e1d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/7f/7f57f9f1ec184e72e94e0fc004501779c667270e46c4beac961f0b9918a5face.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/7f/7f57f9f1ec184e72e94e0fc004501779c667270e46c4beac961f0b9918a5face.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/80/80fedeba9f783fd4cf7316eee009bed1243ac6f0b0c32b71a6dbfa128188a636.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/80/80fedeba9f783fd4cf7316eee009bed1243ac6f0b0c32b71a6dbfa128188a636.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9a/9ab193656ddeec2600b0f72f915e95bacd8807e50319de50af26e2513b1d9c05.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9a/9ab193656ddeec2600b0f72f915e95bacd8807e50319de50af26e2513b1d9c05.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9e/9ee19e09134b8dafcbc788e96c984a0dbd8d37be7e6e3e02dc4051c04814f21b.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9e/9ee19e09134b8dafcbc788e96c984a0dbd8d37be7e6e3e02dc4051c04814f21b.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a0/a088a0c1f8f893ddeb69ae0aaaf8e00c63781bf6f37c8b2095fe87573ac0c8fe.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a0/a088a0c1f8f893ddeb69ae0aaaf8e00c63781bf6f37c8b2095fe87573ac0c8fe.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a1/a1b91ee83271058775cb66972c6f35d6cc224997e7816809fd93990a43771453.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a1/a1b91ee83271058775cb66972c6f35d6cc224997e7816809fd93990a43771453.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a5/a5e1e7b880e294457deb467523a70495b8774b7666292940a3e09a73357dcd2f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a5/a5e1e7b880e294457deb467523a70495b8774b7666292940a3e09a73357dcd2f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b3/b33c3ec1e0cac18f572bb615b9c1c68e8723d8dff327ae84213d36c7475a7cce.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b3/b33c3ec1e0cac18f572bb615b9c1c68e8723d8dff327ae84213d36c7475a7cce.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b5/b5da071b61ca04bcd94194f3b909d7b8e875eab456617d81c154e077b402ecb6.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b5/b5da071b61ca04bcd94194f3b909d7b8e875eab456617d81c154e077b402ecb6.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b6/b635a39124b000e63e3f585731c259c496062787995277d762b6fb27ca2f2fba.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b6/b635a39124b000e63e3f585731c259c496062787995277d762b6fb27ca2f2fba.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b8/b8515ce271c5c7da9dea57a595a221343f4842e2302e63a8e8b09af2fd6b3978.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b8/b8515ce271c5c7da9dea57a595a221343f4842e2302e63a8e8b09af2fd6b3978.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c1/c1689c5e990ec14456b48899844c491c016e43e4a7fa002472bb8dcfb030cab4.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c1/c1689c5e990ec14456b48899844c491c016e43e4a7fa002472bb8dcfb030cab4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c1/c17983113fd5e2a9869efc79d429fcb76d0b0361b6887b6b6f85ed574a87eed6.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c1/c17983113fd5e2a9869efc79d429fcb76d0b0361b6887b6b6f85ed574a87eed6.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c7/c7a9ca18aae8238536207462bb4f2ae0d7b914eeb299936dbf6c417da87d610f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c7/c7a9ca18aae8238536207462bb4f2ae0d7b914eeb299936dbf6c417da87d610f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8bd8a22b50afd25e0612983eebe10a6d431aad5f4d33b0aca65b0c56b6373d7.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8bd8a22b50afd25e0612983eebe10a6d431aad5f4d33b0aca65b0c56b6373d7.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/cd/cd0ef51b24f4a3c61ea95f76b93463993df77df8a98637158d41981a48292254.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/cd/cd0ef51b24f4a3c61ea95f76b93463993df77df8a98637158d41981a48292254.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/cd/cddbd9d7077ba0a6bf386e667a28bcbaad6823363fe4df29a8002473216d9371.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/cd/cddbd9d7077ba0a6bf386e667a28bcbaad6823363fe4df29a8002473216d9371.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d1/d1a7177e6e583aa216e302fc586728e4104431f9a0a35979cd3b4e67e59c1d25.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d1/d1a7177e6e583aa216e302fc586728e4104431f9a0a35979cd3b4e67e59c1d25.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2803188a6d982d9c5b7d72f8f7d2e141a05a6c5a88976d0bf389ea39240e00c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2803188a6d982d9c5b7d72f8f7d2e141a05a6c5a88976d0bf389ea39240e00c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d3/d3c86430f6ab6d67573e942f6676642e66debc8d1fc5991a8b015831dd1b745c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d3/d3c86430f6ab6d67573e942f6676642e66debc8d1fc5991a8b015831dd1b745c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d4/d4f2ea27de858dac05fe1db8b8c43fb072405677a3b93a534518968e99314762.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d4/d4f2ea27de858dac05fe1db8b8c43fb072405677a3b93a534518968e99314762.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d5/d56c2c65e3e779646bd5d4197a3987c36c91ee4b81f97f4ae6e234369ed0c93b.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d5/d56c2c65e3e779646bd5d4197a3987c36c91ee4b81f97f4ae6e234369ed0c93b.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d7/d79e95a5f38691445189dc9da9cd9a598dc0e4cbb674090c5cb6ed81a18ffadd.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d7/d79e95a5f38691445189dc9da9cd9a598dc0e4cbb674090c5cb6ed81a18ffadd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/da/daa02fc7bcc72bd0cfd43180222524172410f10440e09895d315c6aaf25d279b.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/da/daa02fc7bcc72bd0cfd43180222524172410f10440e09895d315c6aaf25d279b.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/dc/dc5256cfaaac9e380e13677eab9c09753aaaa9b44573fad78fbb2174b35098d9.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/dc/dc5256cfaaac9e380e13677eab9c09753aaaa9b44573fad78fbb2174b35098d9.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ea/ea51d257b634a396bc5ef256a9b000e755e86d639e08033391a9d5e6fd7dfffa.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ea/ea51d257b634a396bc5ef256a9b000e755e86d639e08033391a9d5e6fd7dfffa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ec/ecd767e2b034d4643639c9805900036334f8484097dd38f5370c242a0ae53d57.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ec/ecd767e2b034d4643639c9805900036334f8484097dd38f5370c242a0ae53d57.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/f1/f1df46c138d28de06663374496d660a78764c9e014542e14393cdced2b9b1321.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/f1/f1df46c138d28de06663374496d660a78764c9e014542e14393cdced2b9b1321.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/f5/f5c58755362ca5b9f722a7ff7a5ea37ae6558bfbab68e41b1a9e9bb4edde886e.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/f5/f5c58755362ca5b9f722a7ff7a5ea37ae6558bfbab68e41b1a9e9bb4edde886e.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/f5/f5ed587e4118c42835f686e6c2dbca5bada25d3ea65002d529d5e0c1012a8990.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/f5/f5ed587e4118c42835f686e6c2dbca5bada25d3ea65002d529d5e0c1012a8990.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/appProdProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/prod/appProdProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/appProdProjectContainer.php.meta" afterPath="$PROJECT_DIR$/app/cache/prod/appProdProjectContainer.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/appProdProjectContainerUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/prod/appProdProjectContainerUrlGenerator.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/appProdProjectContainerUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/prod/appProdProjectContainerUrlMatcher.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/classes.map" afterPath="$PROJECT_DIR$/app/cache/prod/classes.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/classes.php" afterPath="$PROJECT_DIR$/app/cache/prod/classes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/templates.php" afterPath="$PROJECT_DIR$/app/cache/prod/templates.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GudetamaFranceBundle/Controller/UploadSubtitleController.php" afterPath="$PROJECT_DIR$/src/GudetamaFranceBundle/Controller/UploadSubtitleController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/pages/upload_subtitle.html.twig" afterPath="$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/pages/upload_subtitle.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -148,18 +25,18 @@
       <file leaf-file-name="UploadSubtitle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/UploadSubtitle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="238">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="48" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadSubtitleController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UploadSubtitleController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Controller/UploadSubtitleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+            <state relative-caret-position="671">
+              <caret line="47" column="53" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
               <folding>
                 <element signature="e#51#110#0#PHP" expanded="true" />
               </folding>
@@ -167,11 +44,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload_subtitle.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="upload_subtitle.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/pages/upload_subtitle.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="187">
+              <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="278" column="34" lean-forward="false" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/Default/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -200,8 +97,8 @@
       <file leaf-file-name="UploadSubtitleRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/UploadSubtitleRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -217,33 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Controller/DefaultController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="75" lean-forward="false" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
-              <folding>
-                <element signature="e#51#89#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Video.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/Video.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileUploader.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/FileUploader.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="19" />
+            <state relative-caret-position="357">
+              <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -268,7 +143,9 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/GudetamaFranceBundle/YoutubeDl.php" />
         <option value="$PROJECT_DIR$/src/GudetamaFranceBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/pages/upload_subtitle.html.twig" />
+        <option value="$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/Video.php" />
         <option value="$PROJECT_DIR$/src/GudetamaFranceBundle/Controller/UploadSubtitleController.php" />
       </list>
     </option>
@@ -632,12 +509,12 @@
       <updated>1486579865886</updated>
       <workItem from="1486579867756" duration="4828000" />
       <workItem from="1486587393172" duration="9829000" />
-      <workItem from="1486665874914" duration="522000" />
+      <workItem from="1486665874914" duration="2699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15179000" />
+    <option name="totallyTimeSpent" value="17356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -798,6 +675,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -824,13 +702,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -985,14 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/Video.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Form/UploadSubtitleType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1001,29 +864,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/UploadSubtitleRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/UploadSubtitle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Controller/UploadSubtitleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-          <folding>
-            <element signature="e#51#110#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,6 +876,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/UploadSubtitleRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/Video.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="278" column="34" lean-forward="false" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1045,9 +914,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Resources/views/pages/upload_subtitle.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Entity/UploadSubtitle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="48" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GudetamaFranceBundle/Controller/UploadSubtitleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="47" column="53" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+          <folding>
+            <element signature="e#51#110#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

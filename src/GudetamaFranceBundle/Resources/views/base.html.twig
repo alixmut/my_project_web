@@ -60,8 +60,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				
 				<div class="box">
-				{% block body %}
+
 				<div class="grids">
+                    {% block body %}
 					<div class="grid">
 						<h3>Consectetur adipisicing elit</h3>
 						<a href="single.html"><img src="{{ asset('images/g1 copy.png ') }}" title="video-name" /></a>
@@ -275,9 +276,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</div>
 					</div>
+                    {% endblock %}
 				</div>
 				<div class="clear"> </div>
-			{% endblock %}
 			</div>
 			
 			<div class="clear"> </div>

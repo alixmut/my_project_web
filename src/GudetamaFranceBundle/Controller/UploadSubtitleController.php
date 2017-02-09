@@ -44,7 +44,8 @@ class UploadSubtitleController extends Controller
 				$product->setBrochure($fileName);*/
 				$em->persist($upload);
 				$em->flush();
-				return $this->redirect('GudetamaFranceBundle:pages:upload_subtitle.html.twig');
+                return $this->render('GudetamaFranceBundle:pages:upload_subtitle.html.twig', array(
+                    'form' => $form->createView(),));
 			}
 			else echo "<script>alert(\"Le fichier n'est pas un srt\")</script>";
 		}
