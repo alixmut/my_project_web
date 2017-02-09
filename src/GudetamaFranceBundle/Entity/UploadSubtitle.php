@@ -18,27 +18,8 @@ class UploadSubtitle
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
 	protected $id;
-    /**
-     * @ORM\Column(type="string")
-     *
-     * @Assert\NotBlank(message="Please, upload the subtitle file as a SRT file.")
-     * @Assert\File(mimeTypes={ "text/plain" })
-     */
-    private $brochure;
-
-    public function getBrochure()
-    {
-        return $this->brochure;
-    }
-
-    public function setBrochure($brochure)
-    {
-		$this->brochure = $brochure;
-
-        return $this;
-    }
-
-    /**
+	
+	/**
      * Get id
      *
      * @return integer
@@ -46,5 +27,124 @@ class UploadSubtitle
     public function getId()
     {
         return $this->id;
+    }
+	
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Please, upload the subtitle file as a SRT file.")
+     */
+    private $filename;
+	
+    public function getFilename()
+    {
+        return $this->filename;
+    }
+
+    public function setFilename($filename)
+    {
+		$this->filename = $filename;
+
+        return $this;
+    }
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $filenamedb;
+	
+	public function getFilenamedb()
+    {
+        return $this->filenamedb;
+    }
+
+    public function setFilenamedb($filenamedb)
+    {
+		$this->filenamedb = $filenamedb;
+
+        return $this;
+    }
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $username;
+	
+	public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setUsername($username)
+    {
+		$this->username = $username;
+
+        return $this;
+    }
+	
+	/**
+	* @ORM\ManyToOne(targetEntity="GudetamaFranceBundle\Entity\Video")
+	* @ORM\JoinColumn(nullable=false)
+	*/
+	private $video;
+	
+	public function getVideo()
+    {
+        return $this->video;
+    }
+
+    public function setVideo($video)
+    {
+		$this->video = $video;
+
+        return $this;
+    }
+	
+	/**
+	* @ORM\OneToMany(targetEntity="GudetamaFranceBundle\Entity\Note", mappedBy="uploadsubtitle")
+	* @ORM\JoinColumn(nullable=false)
+	*/
+	private $note;
+	
+	public function getNote()
+    {
+        return $this->note;
+    }
+
+    public function setNote($note)
+    {
+		$this->note = $note;
+
+        return $this;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->note = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add note
+     *
+     * @param \GudetamaFranceBundle\Entity\Note $note
+     *
+     * @return UploadSubtitle
+     */
+    public function addNote(\GudetamaFranceBundle\Entity\Note $note)
+    {
+        $this->note[] = $note;
+    
+        return $this;
+    }
+
+    /**
+     * Remove note
+     *
+     * @param \GudetamaFranceBundle\Entity\Note $note
+     */
+    public function removeNote(\GudetamaFranceBundle\Entity\Note $note)
+    {
+        $this->note->removeElement($note);
     }
 }
