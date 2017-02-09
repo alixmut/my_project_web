@@ -9,3 +9,7 @@ youtube_homepage:
 gudetama_france_upload_subtitle:
     path:     /upload_subtitle
     defaults: { _controller: GudetamaFranceBundle:UploadSubtitle:upload_subtitle }
+
+gudetama_france_video:
+    path:     /video
+    defaults: { _controller: GudetamaFranceBundle:Video:show }
