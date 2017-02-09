@@ -1,0 +1,9 @@
+{# src/GudetamaFranceBundle/Resources/views/Default/index.html.twig #}
+{% extends 'GudetamaFranceBundle::layout.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+{{ form_row(form.brochure) }}
+{{ form_end(form) }}
+{% endblock %}
