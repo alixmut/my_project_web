@@ -97,6 +97,7 @@
   'GudetamaFranceBundle::layout.html.twig' => 'C:\\wamp\\www\\my_project_web\\src\\GudetamaFranceBundle/Resources/views/layout.html.twig',
   'GudetamaFranceBundle:pages:index.html.twig' => 'C:\\wamp\\www\\my_project_web\\src\\GudetamaFranceBundle/Resources/views/pages/index.html.twig',
   'GudetamaFranceBundle:pages:upload_subtitle.html.twig' => 'C:\\wamp\\www\\my_project_web\\src\\GudetamaFranceBundle/Resources/views/pages/upload_subtitle.html.twig',
+  'GudetamaFranceBundle:pages:video.html.twig' => 'C:\\wamp\\www\\my_project_web\\src\\GudetamaFranceBundle/Resources/views/pages/video.html.twig',
   'GudetamaFranceBundle:UploadSubtitle:upload_subtitle.html.twig' => 'C:\\wamp\\www\\my_project_web\\src\\GudetamaFranceBundle/Resources/views/UploadSubtitle/upload_subtitle.html.twig',
   'GudetamaFranceBundle:youtube:youtube.html.twig' => 'C:\\wamp\\www\\my_project_web\\src\\GudetamaFranceBundle/Resources/views/youtube/youtube.html.twig',
   '::base.html.twig' => 'C:\\wamp\\www\\my_project_web\\app/Resources\\views/base.html.twig',

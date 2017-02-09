@@ -46,6 +46,11 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
             return array (  '_controller' => 'GudetamaFranceBundle\\Controller\\UploadSubtitleController::upload_subtitleAction',  '_route' => 'gudetama_france_upload_subtitle',);
         }
 
+        // gudetama_france_video
+        if ($pathinfo === '/video') {
+            return array (  '_controller' => 'GudetamaFranceBundle\\Controller\\VideoController::showAction',  '_route' => 'gudetama_france_video',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
