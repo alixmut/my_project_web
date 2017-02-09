@@ -21,7 +21,7 @@ class UploadSubtitleController extends Controller
 			
 			// $file stores the uploaded srt file
 			/** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
-			$file = $upload->getBrochure();
+			$file = $upload->getFilename();
 																			//Si n'entre pas dans le if, fait des choses
 			if(strcmp($file->getClientOriginalExtension(), "srt") == 0) {	//Quand censé entrer dans le if, ne fait plus rien et ne sort pas
 				echo "<script>alert(\"Le fichier a été ajouté\")</script>";
@@ -36,7 +36,7 @@ class UploadSubtitleController extends Controller
 
 				// Update the 'brochure' property to store the srt file name
 				// instead of its contents
-				$upload->setBrochure($fileName);
+				$upload->setFilename($fileName);
 
 				// ... persist the $upload variable or any other work
 				/*$file = $product->getBrochure();
