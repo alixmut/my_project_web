@@ -4,6 +4,7 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-{{ form_row(form.brochure) }}
-{{ form_end(form) }}
+    {{ form_start(form) }}
+    {{ form_row(form.brochure) }}
+    {{ form_end(form) }}
 {% endblock %}
