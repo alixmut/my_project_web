@@ -9,8 +9,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<head>
 		<title>{% block title %}Title here {% endblock %} | Accueil :: </title>
 		{% block stylesheets %}
+
 			<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css"  media="all" />
 			<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+
         {% endblock %}
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/pageicon.png ') }}" />
 
@@ -24,14 +26,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header">
 			<!----start-Logo---->
 			<div class="logo">
-				<a href="index.html"><img src="{{ asset('images/logo.png ') }}" title="logo" /></a>
+				<a href="index.html"><img src="{{ asset('images/logo1.png ') }}" title="logo" /></a>
 			</div>
 			<!----End-Logo---->
 			<!----start-top-nav---->
 			{% block navigation %}
 			<div class="top-nav">
 				<ul>
-					<li><a href="index.html">Accueil</a><p>Gudetama</p></li>
+					<li><a href="{{ path('gudetama_france_homepage') }}">Accueil</a><p>Gudetama</p></li>
 					<li><a href="categories.html">Categories</a><p>Recherchez</p></li>
 					<li><a href="categories.html">Sous-titre</a><p>Parcourir</p></li>
 					<li><a href="{{ path('gudetama_france_upload_subtitle') }}">Ajouter</a><p>Video/sous-titre</p></li>
@@ -49,7 +51,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="left-content">
 				<div class="searchbar">
 					<div class="search-left">
-						<p>Latest Video Form VideosTube</p>
+						<p>Dernières vidéos de Gudetama France</p>
 					</div>
 					<div class="search-right">
 						<form>
@@ -60,9 +62,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				
 				<div class="box">
-
+					{% block body %}
 				<div class="grids">
-                    {% block body %}
+
 					<div class="grid">
 						<h3>Consectetur adipisicing elit</h3>
 						<a href="single.html"><img src="{{ asset('images/g1 copy.png ') }}" title="video-name" /></a>
@@ -132,6 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</div>
 					</div>
+
 				</div>
 				<div class="clear"> </div>
 				<div class="grids">
@@ -276,14 +279,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</div>
 					</div>
-                    {% endblock %}
+
 				</div>
+                    {% endblock %}
 				<div class="clear"> </div>
 			</div>
 			
 			<div class="clear"> </div>
-			{% block pagination %}
+
 			<ul class="dc_pagination dc_paginationA dc_paginationA03">
+                {% block pagination %}
 						  <li><a href="#" class="first">First</a></li>
 						  <li><a href="#" class="previous">Previous</a></li>
 						  <li><a href="#">1</a></li>
@@ -293,15 +298,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						  <li><a href="#">5</a></li>
 						  <li><a href="#" class="next">Next</a></li>
 						  <li><a href="#" class="last">Last</a></li>
-						  
+                {% endblock %}
 						</ul>
-			{% endblock %}
+
+
+
 			<div class="clear"> </div>
 		</div>
 		<div class="right-content">
 			<div class="popular">
 				<h3>Popular Videos</h3>
-				<p><img src="images/l1.png" title="likes" /> 10,000</p>
 				<div class="clear"> </div>
 			</div>
 			<div class="grid1">
@@ -312,19 +318,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						
 						<div class="grid-info">
-							<div class="video-share">
-								<ul>
-									<li><a href="#"><img src="{{ asset('images/likes.png') }}" title="links" /></a></li>
-									<li><a href="#"><img src="{{ asset('images/link.png') }}" title="Link" /></a></li>
-									<li><a href="#"><img src="{{ asset('images/views.png') }}" title="Views" /></a></li>
-								</ul>
-							</div>
-							<div class="video-watch">
-								<a href="#">Watch Now</a>
-							</div>
-							<div class="clear"> </div>
 							<div class="lables">
-								<p>Labels:<a href="#">Lorem</a></p>
+								<p>Categorie: <a href="#">Categorie</a></p>
 							</div>
 						</div>
 					</div>
@@ -419,7 +414,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 			<div class="clear"> </div>
 			<div class="copy-right">
-			<p>&#169 2013 All rights Reserved | Design by &nbsp;<a href="http://w3layouts.com">W3Layouts</a></p>
+			<p>&#169 2017 All rights Reserved | Design by &nbsp;Projet web</p>
 		</div>
 	</div>
 	<!----End-wrap---->

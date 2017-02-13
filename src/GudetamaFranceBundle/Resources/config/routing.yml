@@ -13,3 +13,7 @@ gudetama_france_upload_subtitle:
 gudetama_france_video:
     path:     /video
     defaults: { _controller: GudetamaFranceBundle:Video:show }
+
+gudetama_france_video_form:
+  pattern:   /video_show/{id}
+  defaults:  { _controller: GudetamaFranceBundle:VideoForm:index }

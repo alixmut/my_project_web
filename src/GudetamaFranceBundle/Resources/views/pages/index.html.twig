@@ -2,3 +2,47 @@
 {% extends 'GudetamaFranceBundle::layout.html.twig' %}
 
 {% block title %}Accueil{% endblock%}
+
+
+{%  block body %}
+<div class="grids">
+    {% for video in pagination %}
+
+<div class="grid">
+    <h3>  {{ video.filenamedb|truncate(20) }} </h3>
+    <a href="{{ path('gudetama_france_video_form', {'id': video.id}) }}"><img src="{{ asset('uploads/video/'~video.filename~'/poster.jpg') }}" title="video-name" /></a>
+    <!-- <div class="time">
+        <span>00:10</span>
+    </div>-->
+    <div class="grid-info">
+        <!--<div class="video-share">
+            <ul>
+                <li><a href="#"><img src="{{ asset('images/likes.png ') }}" title="links" /></a></li>
+                <li><a href="#"><img src="{{ asset('images/link.png ') }}" title="Link" /></a></li>
+                <li><a href="#"><img src="{{ asset('images/views.png ') }}" title="Views" /></a></li>
+            </ul>
+        </div>
+        <!--<div class="video-watch">
+            <a href="single.html">Regardez !</a>
+        </div>-->
+        <div class="clear"> </div>
+        <div class="lables">
+            <p>Catégorie:<a href="categories.html">Catégorie</a></p>
+        </div>
+    </div>
+</div>
+        {%  if loop.index % 3 == 0 %}
+            </div>
+            <div class="clear"> </div>
+            <div class="grids">
+        {% endif %}
+    {% endfor %}
+    </div>
+{%  endblock %}
+
+{%  block pagination %}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+{%  endblock %}

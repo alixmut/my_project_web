@@ -18,6 +18,7 @@ class AppKernel extends Kernel
 			new FM\ElfinderBundle\FMElfinderBundle(),
             new AppBundle\AppBundle(),
             new GudetamaFranceBundle\GudetamaFranceBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

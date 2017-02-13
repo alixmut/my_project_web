@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * UploadSubtitle
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="GudetamaFranceBundle\Entity\VideoRepository")
+ * @ORM\Entity(repositoryClass="VideoRepository")
  */
 
 class Video
@@ -49,6 +49,11 @@ class Video
      */
     private $idVideo;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="GudetamaFranceBundle\Entity\Categorie", inversedBy="videos")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $categorie;
     /**
      * Get id
      *
@@ -194,5 +199,53 @@ class Video
     public function getSubtitles()
     {
         return $this->subtitles;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param string $categorie
+     *
+     * @return Video
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return string
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * Add categorie
+     *
+     * @param \GudetamaFranceBundle\Entity\Categorie $categorie
+     *
+     * @return Video
+     */
+    public function addCategorie(\GudetamaFranceBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie[] = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Remove categorie
+     *
+     * @param \GudetamaFranceBundle\Entity\Categorie $categorie
+     */
+    public function removeCategorie(\GudetamaFranceBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie->removeElement($categorie);
     }
 }

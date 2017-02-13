@@ -64,10 +64,10 @@ class UploadSubtitle extends \GudetamaFranceBundle\Entity\UploadSubtitle impleme
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'brochure');
+            return array('__isInitialized__', 'id', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'filename', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'filenamedb', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'username', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'video', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'note');
         }
 
-        return array('__isInitialized__', 'id', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'brochure');
+        return array('__isInitialized__', 'id', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'filename', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'filenamedb', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'username', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'video', '' . "\0" . 'GudetamaFranceBundle\\Entity\\UploadSubtitle' . "\0" . 'note');
     }
 
     /**
@@ -176,28 +176,6 @@ class UploadSubtitle extends \GudetamaFranceBundle\Entity\UploadSubtitle impleme
     /**
      * {@inheritDoc}
      */
-    public function getBrochure()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBrochure', array());
-
-        return parent::getBrochure();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setBrochure($brochure)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBrochure', array($brochure));
-
-        return parent::setBrochure($brochure);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getId()
     {
         if ($this->__isInitialized__ === false) {
@@ -208,6 +186,138 @@ class UploadSubtitle extends \GudetamaFranceBundle\Entity\UploadSubtitle impleme
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', array());
 
         return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFilename()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFilename', array());
+
+        return parent::getFilename();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFilename($filename)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFilename', array($filename));
+
+        return parent::setFilename($filename);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFilenamedb()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFilenamedb', array());
+
+        return parent::getFilenamedb();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFilenamedb($filenamedb)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFilenamedb', array($filenamedb));
+
+        return parent::setFilenamedb($filenamedb);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUsername()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsername', array());
+
+        return parent::getUsername();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUsername($username)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUsername', array($username));
+
+        return parent::setUsername($username);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVideo()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVideo', array());
+
+        return parent::getVideo();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVideo($video)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVideo', array($video));
+
+        return parent::setVideo($video);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNote()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNote', array());
+
+        return parent::getNote();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setNote($note)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNote', array($note));
+
+        return parent::setNote($note);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addNote(\GudetamaFranceBundle\Entity\Note $note)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addNote', array($note));
+
+        return parent::addNote($note);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeNote(\GudetamaFranceBundle\Entity\Note $note)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeNote', array($note));
+
+        return parent::removeNote($note);
     }
 
 }

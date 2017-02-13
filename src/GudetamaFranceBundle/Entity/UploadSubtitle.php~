@@ -82,7 +82,7 @@ class UploadSubtitle
     }
 	
 	/**
-	* @ORM\ManyToOne(targetEntity="GudetamaFranceBundle\Entity\Video")
+	* @ORM\ManyToOne(targetEntity="GudetamaFranceBundle\Entity\Video", inversedBy="subtitles")
 	* @ORM\JoinColumn(nullable=false)
 	*/
 	private $video;
@@ -115,5 +115,36 @@ class UploadSubtitle
 		$this->note = $note;
 
         return $this;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->note = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add note
+     *
+     * @param \GudetamaFranceBundle\Entity\Note $note
+     *
+     * @return UploadSubtitle
+     */
+    public function addNote(\GudetamaFranceBundle\Entity\Note $note)
+    {
+        $this->note[] = $note;
+    
+        return $this;
+    }
+
+    /**
+     * Remove note
+     *
+     * @param \GudetamaFranceBundle\Entity\Note $note
+     */
+    public function removeNote(\GudetamaFranceBundle\Entity\Note $note)
+    {
+        $this->note->removeElement($note);
     }
 }

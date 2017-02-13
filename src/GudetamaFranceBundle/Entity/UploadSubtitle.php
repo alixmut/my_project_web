@@ -82,7 +82,7 @@ class UploadSubtitle
     }
 	
 	/**
-	* @ORM\ManyToOne(targetEntity="GudetamaFranceBundle\Entity\Video")
+	* @ORM\ManyToOne(targetEntity="GudetamaFranceBundle\Entity\Video", inversedBy="subtitles")
 	* @ORM\JoinColumn(nullable=false)
 	*/
 	private $video;

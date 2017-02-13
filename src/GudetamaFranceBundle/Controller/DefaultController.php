@@ -8,6 +8,7 @@ use YoutubeDl\Exception\CopyrightException;
 use YoutubeDl\Exception\NotFoundException;
 use YoutubeDl\Exception\PrivateVideoException;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\HttpFoundation\Request;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -15,32 +16,42 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
 
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $query    = $this->get('doctrine.orm.entity_manager')->getRepository('GudetamaFranceBundle:Video')
+        ->findAll();
+        $dql   = "SELECT a FROM GudetamaFranceBundle:Video a";
 
-        exec('C:\wamp\bin\php\youtube-dl -o C:/wamp/www/my_project_web/web/%(title)s.%(ext)s --format mp4 https://www.youtube.com/watch?v=D4hAVemuQXY');
-        
-        return $this->render('GudetamaFranceBundle:pages:index.html.twig');
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            4/*limit per page*/
+        );
+
+        // parameters to template
+        return $this->render('GudetamaFranceBundle:pages:index.html.twig', array('pagination' => $pagination));
+
     }
 
 	public function getPlaylistYoutubeAction() {
 
     $client = new \Google_Client();
 	$client->getHttpClient()->setDefaultOption('verify', false);
-    $client->setApplicationName("YouTube Application");	
+    $client->setApplicationName("YouTube Application");
 	$client->setDeveloperKey('AIzaSyBF2e8K-B4si6sL6kmVarb-1mYXBazFVT4');
 	$youtube = new \Google_Service_YouTube($client);
 
     $service = new \Google_Service_YouTube($client);
 
-	
+
 	$nextPageToken = '';
 	$htmlBody = '<ul>';
 
     $videos = array();
     $channels = array();
     $playlists = array();
-	
+
 	do {
 		$playlistItemsResponse = $youtube->playlistItems->listPlaylistItems('snippet', array(
 		'playlistId' => 'PLFNUyl__hoIg1iIxNsf28sPori9P6CZoT',
