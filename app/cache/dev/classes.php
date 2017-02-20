@@ -1991,10 +1991,11 @@ $this->manager->apply($request, $configurations);
 private function autoConfigure(\ReflectionFunctionAbstract $r, Request $request, $configurations)
 {
 foreach ($r->getParameters() as $param) {
-if (!$param->getClass() || $param->getClass()->isInstance($request)) {
+if ($param->getClass() && $param->getClass()->isInstance($request)) {
 continue;
 }
 $name = $param->getName();
+if ($param->getClass()) {
 if (!isset($configurations[$name])) {
 $configuration = new ParamConverter(array());
 $configuration->setName($name);
@@ -2003,7 +2004,10 @@ $configurations[$name] = $configuration;
 } elseif (null === $configurations[$name]->getClass()) {
 $configurations[$name]->setClass($param->getClass()->getName());
 }
-$configurations[$name]->setIsOptional($param->isOptional() || $this->isParameterTypeSupported && $param->hasType() && $param->getType()->allowsNull());
+}
+if (isset($configurations[$name])) {
+$configurations[$name]->setIsOptional($param->isOptional() || $param->isDefaultValueAvailable() || $this->isParameterTypeSupported && $param->hasType() && $param->getType()->allowsNull());
+}
 }
 return $configurations;
 }
@@ -5527,6 +5531,36 @@ interface UserProviderInterface
 public function loadUserByUsername($username);
 public function refreshUser(UserInterface $user);
 public function supportsClass($class);
+}
+}
+namespace Symfony\Component\Security\Http
+{
+use Symfony\Component\HttpFoundation\Request;
+interface AccessMapInterface
+{
+public function getPatterns(Request $request);
+}
+}
+namespace Symfony\Component\Security\Http
+{
+use Symfony\Component\HttpFoundation\RequestMatcherInterface;
+use Symfony\Component\HttpFoundation\Request;
+class AccessMap implements AccessMapInterface
+{
+private $map = array();
+public function add(RequestMatcherInterface $requestMatcher, array $attributes = array(), $channel = null)
+{
+$this->map[] = array($requestMatcher, $attributes, $channel);
+}
+public function getPatterns(Request $request)
+{
+foreach ($this->map as $elements) {
+if (null === $elements[0] || $elements[0]->matches($request)) {
+return array($elements[1], $elements[2]);
+}
+}
+return array(null, null);
+}
 }
 }
 namespace Symfony\Component\Security\Http
