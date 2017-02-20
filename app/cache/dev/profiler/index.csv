@@ -56,3 +56,10 @@ c175d7,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,148
 493684,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1487622532,,404
 14028c,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1487622532,fb1e54,200
 fb1e54,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1487622532,,404
+0c9054,::1,GET,http://localhost/my_project_web/web/app_dev.php/login,1487623257,,200
+7a649e,::1,POST,http://localhost/my_project_web/web/app_dev.php/login_check,1487623266,,302
+7b4e74,::1,GET,http://localhost/my_project_web/web/app_dev.php/,1487623267,,200
+36f1f3,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1487623270,f8c545,200
+f8c545,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1487623270,,404
+182385,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1487623270,14265e,200
+14265e,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1487623270,,404
