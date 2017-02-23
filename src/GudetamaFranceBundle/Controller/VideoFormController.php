@@ -18,13 +18,19 @@ class VideoFormController extends Controller
     public function indexAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-
+        $subtitle = new UploadSubtitle();
             if(!($video = $em
                 ->getRepository('GudetamaFranceBundle:Video')
                 ->find($id)))
             {
                 return $this->render('GudetamaFranceBundle:pages:404.html.twig');
             }
+
+            foreach($video->getSubtitles() as $s) {
+                if($s->getNote() > $subtitle->getNote())
+                    $subtitle = $s;
+            }
+            print_r($subtitle->getFilename());
                /* $em->persist($video);
 
 
