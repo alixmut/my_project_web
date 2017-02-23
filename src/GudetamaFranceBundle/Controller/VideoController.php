@@ -47,6 +47,11 @@ class VideoController extends Controller
                 $video->setFilenamedb($v['title']);
                 $video->setIdVideo($v['id']);
 
+                foreach($video->getSubtitles() as $s) {
+                    if($s->getNote() > $subtitle->getNote())
+                        $subtitle = $s;
+                }
+                echo $subtitle;
                 $em->persist($video);
 
 
