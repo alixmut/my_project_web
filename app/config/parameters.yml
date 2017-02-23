@@ -6,7 +6,7 @@ parameters:
     database_user: root
     database_password: null
     mailer_transport: gmail
-    mailer_host: ~
+    mailer_host: null
     mailer_user: gudetamafrance@gmail.com
     mailer_password: projet_alixmut
     secret: ThisTokenIsNotSoSecretChangeIt
