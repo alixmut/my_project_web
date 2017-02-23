@@ -685,8 +685,8 @@
     <parameter key="fos_user.backend_type_orm">true</parameter>
     <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
     <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
-    <parameter key="fos_user.resetting.email.template">FOSUserBundle:Resetting:email.txt.twig</parameter>
-    <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
+    <parameter key="fos_user.resetting.email.template">email/password_resetting.email.twig</parameter>
+    <parameter key="fos_user.registration.confirmation.template">@FOSUser/Registration/email.txt.twig</parameter>
     <parameter key="fos_user.storage">orm</parameter>
     <parameter key="fos_user.firewall_name">main</parameter>
     <parameter key="fos_user.model_manager_name">null</parameter>
@@ -698,9 +698,9 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="webmaster@example.com">webmaster</parameter>
+      <parameter key="registration@example.com">Demo Registration</parameter>
     </parameter>
-    <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
+    <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
     <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
     <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
     <parameter key="fos_user.registration.form.validation_groups" type="collection">
@@ -714,7 +714,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.resetting.email.from_email" type="collection">
-      <parameter key="webmaster@example.com">webmaster</parameter>
+      <parameter key="resetting@example.com">Demo Resetting</parameter>
     </parameter>
     <parameter key="fos_user.resetting.token_ttl">86400</parameter>
     <parameter key="fos_user.resetting.form.type">fos_user_resetting</parameter>
@@ -2337,6 +2337,10 @@
         <argument>FOS\UserBundle\EventListener\FlashListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>fos_user.listener.email_confirmation</argument>
+        <argument>FOS\UserBundle\EventListener\EmailConfirmationListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>fos_user.listener.resetting</argument>
         <argument>FOS\UserBundle\EventListener\ResettingListener</argument>
       </call>
@@ -2432,7 +2436,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58ab6207890de6.95924823</argument>
+            <argument>58aee9f90b93c6.66863923</argument>
           </service>
         </argument>
       </argument>
@@ -2850,7 +2854,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58ab6207890de6.95924823</argument>
+            <argument>58aee9f90b93c6.66863923</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3750,6 +3754,13 @@
       <tag name="form.type" alias="fos_user_registration"/>
       <argument>Users\UserBundle\Entity\User</argument>
     </service>
+    <service id="fos_user.listener.email_confirmation" class="FOS\UserBundle\EventListener\EmailConfirmationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.mailer"/>
+      <argument type="service" id="fos_user.util.token_generator"/>
+      <argument type="service" id="router"/>
+      <argument type="service" id="session"/>
+    </service>
     <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
       <argument>fos_user_change_password_form</argument>
@@ -4157,19 +4168,21 @@
         </service>
       </configurator>
     </service>
-    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\Mailer">
+    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\TwigSwiftMailer">
       <argument type="service" id="swiftmailer.mailer.default"/>
       <argument type="service" id="router"/>
-      <argument type="service" id="templating"/>
+      <argument type="service" id="twig"/>
       <argument type="collection">
-        <argument key="confirmation.template">FOSUserBundle:Registration:email.txt.twig</argument>
-        <argument key="resetting.template">FOSUserBundle:Resetting:email.txt.twig</argument>
+        <argument key="template" type="collection">
+          <argument key="confirmation">@FOSUser/Registration/email.txt.twig</argument>
+          <argument key="resetting">email/password_resetting.email.twig</argument>
+        </argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="webmaster@example.com">webmaster</argument>
+            <argument key="registration@example.com">Demo Registration</argument>
           </argument>
           <argument key="resetting" type="collection">
-            <argument key="webmaster@example.com">webmaster</argument>
+            <argument key="resetting@example.com">Demo Resetting</argument>
           </argument>
         </argument>
       </argument>

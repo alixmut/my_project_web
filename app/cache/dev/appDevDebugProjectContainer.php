@@ -123,6 +123,7 @@ class appDevDebugProjectContainer extends Container
             'fos_user.change_password.form.factory' => 'getFosUser_ChangePassword_Form_FactoryService',
             'fos_user.change_password.form.type' => 'getFosUser_ChangePassword_Form_TypeService',
             'fos_user.listener.authentication' => 'getFosUser_Listener_AuthenticationService',
+            'fos_user.listener.email_confirmation' => 'getFosUser_Listener_EmailConfirmationService',
             'fos_user.listener.flash' => 'getFosUser_Listener_FlashService',
             'fos_user.listener.resetting' => 'getFosUser_Listener_ResettingService',
             'fos_user.mailer' => 'getFosUser_MailerService',
@@ -580,6 +581,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addSubscriberService('fos_user.security.interactive_login_listener', 'FOS\\UserBundle\\EventListener\\LastLoginListener');
         $instance->addSubscriberService('fos_user.listener.authentication', 'FOS\\UserBundle\\EventListener\\AuthenticationListener');
         $instance->addSubscriberService('fos_user.listener.flash', 'FOS\\UserBundle\\EventListener\\FlashListener');
+        $instance->addSubscriberService('fos_user.listener.email_confirmation', 'FOS\\UserBundle\\EventListener\\EmailConfirmationListener');
         $instance->addSubscriberService('fos_user.listener.resetting', 'FOS\\UserBundle\\EventListener\\ResettingListener');
         $instance->addSubscriberService('debug.dump_listener', 'Symfony\\Component\\HttpKernel\\EventListener\\DumpListener');
         $instance->addSubscriberService('web_profiler.debug_toolbar', 'Symfony\\Bundle\\WebProfilerBundle\\EventListener\\WebDebugToolbarListener');
@@ -1521,6 +1523,19 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'fos_user.listener.email_confirmation' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \FOS\UserBundle\EventListener\EmailConfirmationListener A FOS\UserBundle\EventListener\EmailConfirmationListener instance
+     */
+    protected function getFosUser_Listener_EmailConfirmationService()
+    {
+        return $this->services['fos_user.listener.email_confirmation'] = new \FOS\UserBundle\EventListener\EmailConfirmationListener($this->get('fos_user.mailer'), $this->get('fos_user.util.token_generator'), $this->get('router'), $this->get('session'));
+    }
+
+    /**
      * Gets the 'fos_user.listener.flash' service.
      *
      * This service is shared.
@@ -1552,11 +1567,11 @@ class appDevDebugProjectContainer extends Container
      * This service is shared.
      * This method always returns the same instance of the service.
      *
-     * @return \FOS\UserBundle\Mailer\Mailer A FOS\UserBundle\Mailer\Mailer instance
+     * @return \FOS\UserBundle\Mailer\TwigSwiftMailer A FOS\UserBundle\Mailer\TwigSwiftMailer instance
      */
     protected function getFosUser_MailerService()
     {
-        return $this->services['fos_user.mailer'] = new \FOS\UserBundle\Mailer\Mailer($this->get('swiftmailer.mailer.default'), $this->get('router'), $this->get('templating'), array('confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig', 'resetting.template' => 'FOSUserBundle:Resetting:email.txt.twig', 'from_email' => array('confirmation' => array('webmaster@example.com' => 'webmaster'), 'resetting' => array('webmaster@example.com' => 'webmaster'))));
+        return $this->services['fos_user.mailer'] = new \FOS\UserBundle\Mailer\TwigSwiftMailer($this->get('swiftmailer.mailer.default'), $this->get('router'), $this->get('twig'), array('template' => array('confirmation' => '@FOSUser/Registration/email.txt.twig', 'resetting' => 'email/password_resetting.email.twig'), 'from_email' => array('confirmation' => array('registration@example.com' => 'Demo Registration'), 'resetting' => array('resetting@example.com' => 'Demo Resetting'))));
     }
 
     /**
@@ -2596,7 +2611,7 @@ class appDevDebugProjectContainer extends Container
         $w = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $h, $r, 'main', $u, $v, array('use_forward' => false, 'check_path' => 'fos_user_security_check', 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $d, $this->get('security.csrf.token_manager'));
         $w->setRememberMeServices($s);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($q, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $t, 3 => $w, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $s, $g, $a, $d, true, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '58ab6207890de6.95924823', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $q, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $r, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $r, 'fos_user_security_login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($q, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $t, 3 => $w, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $s, $g, $a, $d, true, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '58aee9f90b93c6.66863923', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $q, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $r, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $r, 'fos_user_security_login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -4030,7 +4045,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('security.user_checker.main');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'ThisTokenIsNotSoSecretChangeIt', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58ab6207890de6.95924823')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'ThisTokenIsNotSoSecretChangeIt', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58aee9f90b93c6.66863923')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -4924,8 +4939,8 @@ class appDevDebugProjectContainer extends Container
             'fos_user.backend_type_orm' => true,
             'fos_user.security.interactive_login_listener.class' => 'FOS\\UserBundle\\EventListener\\LastLoginListener',
             'fos_user.security.login_manager.class' => 'FOS\\UserBundle\\Security\\LoginManager',
-            'fos_user.resetting.email.template' => 'FOSUserBundle:Resetting:email.txt.twig',
-            'fos_user.registration.confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig',
+            'fos_user.resetting.email.template' => 'email/password_resetting.email.twig',
+            'fos_user.registration.confirmation.template' => '@FOSUser/Registration/email.txt.twig',
             'fos_user.storage' => 'orm',
             'fos_user.firewall_name' => 'main',
             'fos_user.model_manager_name' => NULL,
@@ -4937,9 +4952,9 @@ class appDevDebugProjectContainer extends Container
                 1 => 'Default',
             ),
             'fos_user.registration.confirmation.from_email' => array(
-                'webmaster@example.com' => 'webmaster',
+                'registration@example.com' => 'Demo Registration',
             ),
-            'fos_user.registration.confirmation.enabled' => false,
+            'fos_user.registration.confirmation.enabled' => true,
             'fos_user.registration.form.type' => 'fos_user_registration',
             'fos_user.registration.form.name' => 'fos_user_registration_form',
             'fos_user.registration.form.validation_groups' => array(
@@ -4953,7 +4968,7 @@ class appDevDebugProjectContainer extends Container
                 1 => 'Default',
             ),
             'fos_user.resetting.email.from_email' => array(
-                'webmaster@example.com' => 'webmaster',
+                'resetting@example.com' => 'Demo Resetting',
             ),
             'fos_user.resetting.token_ttl' => 86400,
             'fos_user.resetting.form.type' => 'fos_user_resetting',
