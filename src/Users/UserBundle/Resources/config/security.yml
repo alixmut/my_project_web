@@ -1,0 +1,38 @@
+# Import dans app/config/security.yml
+
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+    
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+            # log avec email: id: fos_user.user_provider.username
+            
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: .*
+            form_login:
+                provider:             fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                # ajouts
+                login_path:           fos_user_security_login
+                use_forward:          false
+                check_path:           fos_user_security_check
+                failure_path:         null
+                default_target_path:  /
+                remember_me:          true
+            # case se souvenir de moi /login
+            remember_me:
+                key:                  %secret%
+                lifetime:             300000000
+                path:                 /
+                domain:               ~
+            logout:
+                path:                 fos_user_security_logout
+                target:               /
+            anonymous:                true
+          

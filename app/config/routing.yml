@@ -1,3 +1,7 @@
+users_user:
+    resource: "@UsersUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 gudetama_france:
     resource: "@GudetamaFranceBundle/Resources/config/routing.yml"
     prefix:   /
@@ -8,3 +12,6 @@ app:
 # app/config/routing.yml
 elfinder:
      resource: "@FMElfinderBundle/Resources/config/routing.yml"
+     
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

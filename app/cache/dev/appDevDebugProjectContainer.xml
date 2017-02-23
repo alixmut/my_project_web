@@ -19,6 +19,8 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="GudetamaFranceBundle">GudetamaFranceBundle\GudetamaFranceBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
+      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="UsersUserBundle">Users\UserBundle\UsersUserBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -79,6 +81,16 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp\www\my_project_web\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
+      </parameter>
+      <parameter key="FOSUserBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle</parameter>
+        <parameter key="namespace">FOS\UserBundle</parameter>
+      </parameter>
+      <parameter key="UsersUserBundle" type="collection">
+        <parameter key="parent">FOSUserBundle</parameter>
+        <parameter key="path">C:\wamp\www\my_project_web\src\Users\UserBundle</parameter>
+        <parameter key="namespace">Users\UserBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -224,6 +236,7 @@
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="validator.api">2.5-bc</parameter>
     <parameter key="fragment.listener.class">Symfony\Component\HttpKernel\EventListener\FragmentListener</parameter>
+    <parameter key="translator.logging">true</parameter>
     <parameter key="profiler.class">Symfony\Component\HttpKernel\Profiler\Profiler</parameter>
     <parameter key="profiler_listener.class">Symfony\Component\HttpKernel\EventListener\ProfilerListener</parameter>
     <parameter key="data_collector.config.class">Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector</parameter>
@@ -306,7 +319,16 @@
     <parameter key="security.http_utils.class">Symfony\Component\Security\Http\HttpUtils</parameter>
     <parameter key="security.validator.user_password.class">Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator</parameter>
     <parameter key="security.expression_language.class">Symfony\Component\Security\Core\Authorization\ExpressionLanguage</parameter>
-    <parameter key="security.role_hierarchy.roles" type="collection"/>
+    <parameter key="security.role_hierarchy.roles" type="collection">
+      <parameter key="ROLE_ADMIN" type="collection">
+        <parameter>ROLE_USER</parameter>
+      </parameter>
+      <parameter key="ROLE_SUPER_ADMIN" type="collection">
+        <parameter>ROLE_USER</parameter>
+        <parameter>ROLE_ADMIN</parameter>
+        <parameter>ROLE_ALLOWED_TO_SWITCH</parameter>
+      </parameter>
+    </parameter>
     <parameter key="security.authentication.retry_entry_point.class">Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint</parameter>
     <parameter key="security.channel_listener.class">Symfony\Component\Security\Http\Firewall\ChannelListener</parameter>
     <parameter key="security.authentication.form_entry_point.class">Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint</parameter>
@@ -660,6 +682,47 @@
     <parameter key="knp_paginator.template.filtration">KnpPaginatorBundle:Pagination:filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">KnpPaginatorBundle:Pagination:sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">10</parameter>
+    <parameter key="fos_user.backend_type_orm">true</parameter>
+    <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
+    <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
+    <parameter key="fos_user.resetting.email.template">FOSUserBundle:Resetting:email.txt.twig</parameter>
+    <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
+    <parameter key="fos_user.storage">orm</parameter>
+    <parameter key="fos_user.firewall_name">main</parameter>
+    <parameter key="fos_user.model_manager_name">null</parameter>
+    <parameter key="fos_user.model.user.class">Users\UserBundle\Entity\User</parameter>
+    <parameter key="fos_user.profile.form.type">fos_user_profile</parameter>
+    <parameter key="fos_user.profile.form.name">fos_user_profile_form</parameter>
+    <parameter key="fos_user.profile.form.validation_groups" type="collection">
+      <parameter>Profile</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.registration.confirmation.from_email" type="collection">
+      <parameter key="webmaster@example.com">webmaster</parameter>
+    </parameter>
+    <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
+    <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
+    <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
+    <parameter key="fos_user.registration.form.validation_groups" type="collection">
+      <parameter>Registration</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.change_password.form.type">fos_user_change_password</parameter>
+    <parameter key="fos_user.change_password.form.name">fos_user_change_password_form</parameter>
+    <parameter key="fos_user.change_password.form.validation_groups" type="collection">
+      <parameter>ChangePassword</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.resetting.email.from_email" type="collection">
+      <parameter key="webmaster@example.com">webmaster</parameter>
+    </parameter>
+    <parameter key="fos_user.resetting.token_ttl">86400</parameter>
+    <parameter key="fos_user.resetting.form.type">fos_user_resetting</parameter>
+    <parameter key="fos_user.resetting.form.name">fos_user_resetting_form</parameter>
+    <parameter key="fos_user.resetting.form.validation_groups" type="collection">
+      <parameter>ResetPassword</parameter>
+      <parameter>Default</parameter>
+    </parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -704,6 +767,10 @@
       <parameter key="data_collector.router" type="collection">
         <parameter>router</parameter>
         <parameter>@WebProfiler/Collector/router.html.twig</parameter>
+      </parameter>
+      <parameter key="data_collector.translation" type="collection">
+        <parameter>translation</parameter>
+        <parameter>@WebProfiler/Collector/translation.html.twig</parameter>
       </parameter>
       <parameter key="data_collector.security" type="collection">
         <parameter>security</parameter>
@@ -793,7 +860,7 @@
         <argument type="service">
           <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TranslationsCacheWarmer" public="false">
             <tag name="kernel.cache_warmer"/>
-            <argument type="service" id="translator"/>
+            <argument type="service" id="translator.default"/>
           </service>
         </argument>
         <argument type="service">
@@ -936,7 +1003,9 @@
     </service>
     <service id="translator.default" class="Symfony\Bundle\FrameworkBundle\Translation\Translator">
       <argument type="service" id="service_container"/>
-      <argument type="service" id="translator.selector"/>
+      <argument type="service">
+        <service class="Symfony\Component\Translation\MessageSelector" public="false"/>
+      </argument>
       <argument type="collection">
         <argument key="translation.loader.php" type="collection">
           <argument>php</argument>
@@ -976,17 +1045,329 @@
       <argument type="collection">
         <argument key="cache_dir">C:\wamp\www\my_project_web\app\cache\dev/translations</argument>
         <argument key="debug">true</argument>
+        <argument key="resource_files" type="collection">
+          <argument key="af" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.af.xlf</argument>
+          </argument>
+          <argument key="ar" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ar.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ar.yml</argument>
+          </argument>
+          <argument key="az" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.az.xlf</argument>
+          </argument>
+          <argument key="bg" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.bg.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.bg.yml</argument>
+          </argument>
+          <argument key="ca" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ca.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ca.yml</argument>
+          </argument>
+          <argument key="cs" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.cs.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.cs.yml</argument>
+          </argument>
+          <argument key="cy" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cy.xlf</argument>
+          </argument>
+          <argument key="da" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.da.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.da.yml</argument>
+          </argument>
+          <argument key="de" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.de.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.de.yml</argument>
+          </argument>
+          <argument key="el" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.el.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.el.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.el.yml</argument>
+          </argument>
+          <argument key="en" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.en.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.en.yml</argument>
+          </argument>
+          <argument key="es" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.es.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.es.yml</argument>
+          </argument>
+          <argument key="et" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.et.yml</argument>
+          </argument>
+          <argument key="eu" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.eu.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.eu.yml</argument>
+          </argument>
+          <argument key="fa" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fa.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fa.yml</argument>
+          </argument>
+          <argument key="fi" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fi.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fi.yml</argument>
+          </argument>
+          <argument key="fr" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fr.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fr.yml</argument>
+          </argument>
+          <argument key="gl" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.gl.xlf</argument>
+          </argument>
+          <argument key="he" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.he.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.he.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.he.yml</argument>
+          </argument>
+          <argument key="hr" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.hr.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.hr.yml</argument>
+          </argument>
+          <argument key="hu" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.hu.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.hu.yml</argument>
+          </argument>
+          <argument key="hy" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hy.xlf</argument>
+          </argument>
+          <argument key="id" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.id.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.id.yml</argument>
+          </argument>
+          <argument key="it" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.it.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.it.yml</argument>
+          </argument>
+          <argument key="ja" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ja.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ja.yml</argument>
+          </argument>
+          <argument key="lb" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.lb.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lb.yml</argument>
+          </argument>
+          <argument key="lt" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lt.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.lt.yml</argument>
+          </argument>
+          <argument key="lv" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.lv.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.lv.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.lv.yml</argument>
+          </argument>
+          <argument key="mn" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.mn.xlf</argument>
+          </argument>
+          <argument key="nl" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.nl.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.nl.yml</argument>
+          </argument>
+          <argument key="nn" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nn.xlf</argument>
+          </argument>
+          <argument key="no" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.no.xlf</argument>
+          </argument>
+          <argument key="pl" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pl.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pl.yml</argument>
+          </argument>
+          <argument key="pt" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pt.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pt.yml</argument>
+          </argument>
+          <argument key="pt_BR" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.pt_BR.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.pt_BR.yml</argument>
+          </argument>
+          <argument key="ro" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ro.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ro.yml</argument>
+          </argument>
+          <argument key="ru" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.ru.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.ru.yml</argument>
+          </argument>
+          <argument key="sk" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.sk.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sk.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sk.yml</argument>
+          </argument>
+          <argument key="sl" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.sl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sl.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sl.yml</argument>
+          </argument>
+          <argument key="sq" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sq.xlf</argument>
+          </argument>
+          <argument key="sr_Cyrl" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.sr_Cyrl.xlf</argument>
+          </argument>
+          <argument key="sr_Latn" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.sr_Latn.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sr_Latn.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sr_Latn.yml</argument>
+          </argument>
+          <argument key="sv" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.sv.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.sv.yml</argument>
+          </argument>
+          <argument key="th" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.th.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.th.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.th.yml</argument>
+          </argument>
+          <argument key="tr" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.tr.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.tr.yml</argument>
+          </argument>
+          <argument key="uk" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.uk.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.uk.yml</argument>
+          </argument>
+          <argument key="vi" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.vi.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.vi.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.vi.yml</argument>
+          </argument>
+          <argument key="zh_CN" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.zh_CN.xlf</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.zh_CN.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.zh_CN.yml</argument>
+          </argument>
+          <argument key="zh_TW" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_TW.xlf</argument>
+          </argument>
+          <argument key="pt_PT" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.pt_PT.xlf</argument>
+          </argument>
+          <argument key="ua" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.ua.xlf</argument>
+          </argument>
+          <argument key="nb" type="collection">
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.nb.yml</argument>
+            <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.nb.yml</argument>
+          </argument>
+        </argument>
       </argument>
       <argument type="collection"/>
       <call method="setConfigCacheFactory">
         <argument type="service" id="config_cache_factory"/>
       </call>
+      <call method="setFallbackLocales">
+        <argument type="collection">
+          <argument>fr</argument>
+        </argument>
+      </call>
       <autowiring-type>Symfony\Component\Translation\TranslatorInterface</autowiring-type>
     </service>
-    <service id="translator" class="Symfony\Component\Translation\IdentityTranslator">
-      <argument type="service" id="translator.selector"/>
-    </service>
-    <service id="translator.selector" class="Symfony\Component\Translation\MessageSelector" public="false"/>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
       <tag name="translation.loader" alias="php"/>
     </service>
@@ -1272,6 +1653,16 @@
               <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType">form.type.entity</argument>
               <argument key="elfinder">fm_elfinder.form.type</argument>
               <argument key="FM\ElfinderBundle\Form\Type\ElFinderType">fm_elfinder.form.type</argument>
+              <argument key="fos_user_username">fos_user.username_form_type</argument>
+              <argument key="FOS\UserBundle\Form\Type\UsernameFormType">fos_user.username_form_type</argument>
+              <argument key="fos_user_profile">fos_user.profile.form.type</argument>
+              <argument key="FOS\UserBundle\Form\Type\ProfileFormType">fos_user.profile.form.type</argument>
+              <argument key="fos_user_registration">fos_user.registration.form.type</argument>
+              <argument key="FOS\UserBundle\Form\Type\RegistrationFormType">fos_user.registration.form.type</argument>
+              <argument key="fos_user_change_password">fos_user.change_password.form.type</argument>
+              <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
+              <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
+              <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1521,6 +1912,7 @@
       <call method="addXmlMappings">
         <argument type="collection">
           <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
+          <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1532,7 +1924,16 @@
       <call method="addObjectInitializers">
         <argument type="collection">
           <argument type="service" id="doctrine.orm.validator_initializer"/>
+          <argument type="service">
+            <service class="FOS\UserBundle\Validator\Initializer" public="false">
+              <tag name="validator.initializer"/>
+              <argument type="service" id="fos_user.user_manager"/>
+            </service>
+          </argument>
         </argument>
+      </call>
+      <call method="addXmlMapping">
+        <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle\DependencyInjection\Compiler/../../Resources/config/storage-validation/orm.xml</argument>
       </call>
       <factory class="Symfony\Component\Validator\Validation" method="createValidatorBuilder"/>
     </service>
@@ -1617,6 +2018,9 @@
         <argument type="service" id="data_collector.router"/>
       </call>
       <call method="add">
+        <argument type="service" id="data_collector.translation"/>
+      </call>
+      <call method="add">
         <argument type="service">
           <service class="Symfony\Bundle\SecurityBundle\DataCollector\SecurityDataCollector" public="false">
             <tag name="data_collector" template="@Security/Collector/security.html.twig" id="security" priority="270"/>
@@ -1692,6 +2096,10 @@
     <service id="data_collector.form" class="Symfony\Component\Form\Extension\DataCollector\FormDataCollector">
       <tag name="data_collector" template="@WebProfiler/Collector/form.html.twig" id="form" priority="310"/>
       <argument type="service" id="data_collector.form.extractor"/>
+    </service>
+    <service id="data_collector.translation" class="Symfony\Component\Translation\DataCollector\TranslationDataCollector">
+      <tag name="data_collector" template="@WebProfiler/Collector/translation.html.twig" id="translation" priority="275"/>
+      <argument type="service" id="translator"/>
     </service>
     <service id="routing.loader" class="Symfony\Bundle\FrameworkBundle\Routing\DelegatingLoader">
       <argument type="service" id="controller_name_converter"/>
@@ -1917,6 +2325,22 @@
         <argument>Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>fos_user.security.interactive_login_listener</argument>
+        <argument>FOS\UserBundle\EventListener\LastLoginListener</argument>
+      </call>
+      <call method="addSubscriberService">
+        <argument>fos_user.listener.authentication</argument>
+        <argument>FOS\UserBundle\EventListener\AuthenticationListener</argument>
+      </call>
+      <call method="addSubscriberService">
+        <argument>fos_user.listener.flash</argument>
+        <argument>FOS\UserBundle\EventListener\FlashListener</argument>
+      </call>
+      <call method="addSubscriberService">
+        <argument>fos_user.listener.resetting</argument>
+        <argument>FOS\UserBundle\EventListener\ResettingListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>debug.dump_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\DumpListener</argument>
       </call>
@@ -1991,8 +2415,28 @@
     <service id="security.authentication.manager" class="Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager" public="false">
       <argument type="collection">
         <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
+            <argument type="service" id="fos_user.user_provider.username"/>
+            <argument type="service" id="security.user_checker.main"/>
+            <argument>main</argument>
+            <argument type="service" id="security.encoder_factory"/>
+            <argument>true</argument>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider" public="false">
+            <argument type="service" id="security.user_checker.main"/>
+            <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+            <argument>main</argument>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+<<<<<<< HEAD
             <argument>58a22f6f78cce2.16720641</argument>
+=======
+            <argument>58ab6207890de6.95924823</argument>
+>>>>>>> 9f1668e57df9937deca6e6fcf4e541b1c6c1998b
           </service>
         </argument>
       </argument>
@@ -2005,6 +2449,9 @@
       <argument>Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</argument>
       <argument>Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</argument>
     </service>
+    <service id="security.authentication.session_strategy" class="Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy" public="false">
+      <argument>migrate</argument>
+    </service>
     <service id="security.authentication_utils" class="Symfony\Component\Security\Http\Authentication\AuthenticationUtils">
       <argument type="service" id="request_stack"/>
     </service>
@@ -2016,8 +2463,9 @@
       <call method="setVoters">
         <argument type="collection">
           <argument type="service">
-            <service class="Symfony\Component\Security\Core\Authorization\Voter\RoleVoter" public="false">
+            <service class="Symfony\Component\Security\Core\Authorization\Voter\RoleHierarchyVoter" public="false">
               <tag name="security.voter" priority="245"/>
+              <argument type="service" id="security.role_hierarchy"/>
             </service>
           </argument>
           <argument type="service">
@@ -2040,7 +2488,16 @@
       </call>
     </service>
     <service id="security.role_hierarchy" class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="ROLE_ADMIN" type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument key="ROLE_SUPER_ADMIN" type="collection">
+          <argument>ROLE_USER</argument>
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_ALLOWED_TO_SWITCH</argument>
+        </argument>
+      </argument>
     </service>
     <service id="security.firewall" class="Symfony\Component\Security\Http\Firewall">
       <tag name="kernel.event_subscriber"/>
@@ -2053,7 +2510,11 @@
                 <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
               </service>
             </argument>
-            <argument key="security.firewall.map.context.main">null</argument>
+            <argument key="security.firewall.map.context.main" type="service">
+              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                <argument>.*</argument>
+              </service>
+            </argument>
           </argument>
         </service>
       </argument>
@@ -2063,6 +2524,13 @@
       <argument type="service" id="request_stack" on-invalid="null"/>
       <argument type="service" id="router" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
+      <call method="registerListener">
+        <argument>main</argument>
+        <argument>fos_user_security_logout</argument>
+        <argument>logout</argument>
+        <argument>_csrf_token</argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.validator.user_password" class="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator">
       <tag name="validator.constraint_validator" alias="security.validator.user_password"/>
@@ -2094,7 +2562,96 @@
           <service class="Symfony\Component\Security\Http\Firewall\ChannelListener" public="false">
             <tag name="monolog.logger" channel="security"/>
             <argument type="service">
-              <service class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+              <service class="Symfony\Component\Security\Http\AccessMap" public="false">
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/login$</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/register</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/resetting</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/admin/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/get_playlist_youtube</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/upload_subtitle</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/video</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/video_show/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+              </service>
             </argument>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint" public="false">
@@ -2109,9 +2666,7 @@
           <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
             <argument type="service" id="security.token_storage"/>
             <argument type="collection">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Core\User\InMemoryUserProvider" public="false"/>
-              </argument>
+              <argument type="service" id="fos_user.user_provider.username"/>
             </argument>
             <argument>main</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -2119,9 +2674,191 @@
           </service>
         </argument>
         <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                <argument type="service" id="router" on-invalid="null"/>
+                <argument type="service" id="router" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument>/</argument>
+              </service>
+            </argument>
+            <argument type="collection">
+              <argument key="csrf_parameter">_csrf_token</argument>
+              <argument key="csrf_token_id">logout</argument>
+              <argument key="logout_path">fos_user_security_logout</argument>
+            </argument>
+            <call method="addHandler">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
+              </argument>
+            </call>
+            <call method="addHandler">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
+                  <argument type="collection">
+                    <argument type="service" id="fos_user.user_provider.username"/>
+                  </argument>
+                  <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+                  <argument>main</argument>
+                  <argument type="collection">
+                    <argument key="lifetime">300000000</argument>
+                    <argument key="path">/</argument>
+                    <argument key="domain">null</argument>
+                    <argument key="name">REMEMBERME</argument>
+                    <argument key="secure">false</argument>
+                    <argument key="httponly">true</argument>
+                    <argument key="always_remember_me">false</argument>
+                    <argument key="remember_me_parameter">_remember_me</argument>
+                  </argument>
+                  <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+                </service>
+              </argument>
+            </call>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
+            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.fos_userbundle"/>
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument type="service" id="security.authentication.session_strategy"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                <argument type="service" id="router" on-invalid="null"/>
+                <argument type="service" id="router" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument>main</argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument type="collection"/>
+                <call method="setOptions">
+                  <argument type="collection">
+                    <argument key="login_path">fos_user_security_login</argument>
+                    <argument key="default_target_path">/</argument>
+                    <argument key="always_use_default_target_path">false</argument>
+                    <argument key="target_path_parameter">_target_path</argument>
+                    <argument key="use_referer">false</argument>
+                  </argument>
+                </call>
+                <call method="setProviderKey">
+                  <argument>main</argument>
+                </call>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler" public="false">
+                <argument type="service" id="http_kernel"/>
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument type="collection"/>
+                <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+                <call method="setOptions">
+                  <argument type="collection">
+                    <argument key="login_path">fos_user_security_login</argument>
+                    <argument key="failure_path">null</argument>
+                    <argument key="failure_forward">false</argument>
+                    <argument key="failure_path_parameter">_failure_path</argument>
+                  </argument>
+                </call>
+              </service>
+            </argument>
+            <argument type="collection">
+              <argument key="use_forward">false</argument>
+              <argument key="check_path">fos_user_security_check</argument>
+              <argument key="require_previous_session">true</argument>
+              <argument key="username_parameter">_username</argument>
+              <argument key="password_parameter">_password</argument>
+              <argument key="csrf_parameter">_csrf_token</argument>
+              <argument key="csrf_token_id">authenticate</argument>
+              <argument key="post_only">true</argument>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+            <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+            <argument type="service" id="security.csrf.token_manager"/>
+            <call method="setRememberMeServices">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
+                  <argument type="collection">
+                    <argument type="service" id="fos_user.user_provider.username"/>
+                  </argument>
+                  <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+                  <argument>main</argument>
+                  <argument type="collection">
+                    <argument key="lifetime">300000000</argument>
+                    <argument key="path">/</argument>
+                    <argument key="domain">null</argument>
+                    <argument key="name">REMEMBERME</argument>
+                    <argument key="secure">false</argument>
+                    <argument key="httponly">true</argument>
+                    <argument key="always_remember_me">false</argument>
+                    <argument key="remember_me_parameter">_remember_me</argument>
+                  </argument>
+                  <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+                </service>
+              </argument>
+            </call>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\RememberMeListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
+                <argument type="collection">
+                  <argument type="service" id="fos_user.user_provider.username"/>
+                </argument>
+                <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+                <argument>main</argument>
+                <argument type="collection">
+                  <argument key="lifetime">300000000</argument>
+                  <argument key="path">/</argument>
+                  <argument key="domain">null</argument>
+                  <argument key="name">REMEMBERME</argument>
+                  <argument key="secure">false</argument>
+                  <argument key="httponly">true</argument>
+                  <argument key="always_remember_me">false</argument>
+                  <argument key="remember_me_parameter">_remember_me</argument>
+                </argument>
+                <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+            <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+            <argument>true</argument>
+            <argument type="service" id="security.authentication.session_strategy"/>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
+<<<<<<< HEAD
             <argument>58a22f6f78cce2.16720641</argument>
+=======
+            <argument>58ab6207890de6.95924823</argument>
+>>>>>>> 9f1668e57df9937deca6e6fcf4e541b1c6c1998b
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2132,7 +2869,96 @@
             <argument type="service" id="security.token_storage"/>
             <argument type="service" id="security.access.decision_manager"/>
             <argument type="service">
-              <service class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+              <service class="Symfony\Component\Security\Http\AccessMap" public="false">
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/login$</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/register</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/resetting</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/admin/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/get_playlist_youtube</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/upload_subtitle</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/video</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/video_show/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+              </service>
             </argument>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2149,7 +2975,19 @@
             </service>
           </argument>
           <argument>main</argument>
-          <argument>null</argument>
+          <argument type="service">
+            <service class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
+              <argument type="service" id="http_kernel"/>
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                  <argument type="service" id="router" on-invalid="null"/>
+                  <argument type="service" id="router" on-invalid="null"/>
+                </service>
+              </argument>
+              <argument>fos_user_security_login</argument>
+              <argument>false</argument>
+            </service>
+          </argument>
           <argument>null</argument>
           <argument>null</argument>
           <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -2490,6 +3328,14 @@
       <argument type="service">
         <service class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
           <argument type="service" id="service_container"/>
+          <call method="addEventSubscriber">
+            <argument type="service">
+              <service class="FOS\UserBundle\Doctrine\Orm\UserListener" public="false">
+                <tag name="doctrine.event_subscriber"/>
+                <argument type="service" id="service_container"/>
+              </service>
+            </argument>
+          </call>
           <call method="addEventListener">
             <argument type="collection">
               <argument>loadClassMetadata</argument>
@@ -2547,6 +3393,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="GudetamaFranceBundle">GudetamaFranceBundle\Entity</argument>
+              <argument key="UsersUserBundle">Users\UserBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2567,10 +3414,38 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\my_project_web\src\GudetamaFranceBundle\Entity</argument>
+                        <argument>C:\wamp\www\my_project_web\src\Users\UserBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>GudetamaFranceBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\my_project_web\src\GudetamaFranceBundle\Entity</argument>
+                        <argument>C:\wamp\www\my_project_web\src\Users\UserBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Users\UserBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\XmlDriver">
+                      <argument type="service">
+                        <service class="Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator">
+                          <argument type="collection">
+                            <argument key="C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle\Resources\config\doctrine-mapping">FOS\UserBundle\Model</argument>
+                          </argument>
+                          <argument>.orm.xml</argument>
+                        </service>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>FOS\UserBundle\Model</argument>
                 </call>
               </service>
             </argument>
@@ -2823,6 +3698,97 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
+    <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.user_checker.main"/>
+      <argument type="service" id="security.authentication.session_strategy"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="fos_user.user_provider.username" class="FOS\UserBundle\Security\UserProvider" public="false">
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.listener.authentication" class="FOS\UserBundle\EventListener\AuthenticationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.security.login_manager"/>
+      <argument>main</argument>
+    </service>
+    <service id="fos_user.listener.flash" class="FOS\UserBundle\EventListener\FlashListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="session"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="fos_user.username_form_type" class="FOS\UserBundle\Form\Type\UsernameFormType">
+      <tag name="form.type" alias="fos_user_username"/>
+      <argument type="service">
+        <service class="FOS\UserBundle\Form\DataTransformer\UserToUsernameTransformer" public="false">
+          <argument type="service" id="fos_user.user_manager"/>
+        </service>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_profile_form</argument>
+      <argument>fos_user_profile</argument>
+      <argument type="collection">
+        <argument>Profile</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
+      <tag name="form.type" alias="fos_user_profile"/>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_registration_form</argument>
+      <argument>fos_user_registration</argument>
+      <argument type="collection">
+        <argument>Registration</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
+      <tag name="form.type" alias="fos_user_registration"/>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_change_password_form</argument>
+      <argument>fos_user_change_password</argument>
+      <argument type="collection">
+        <argument>ChangePassword</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.change_password.form.type" class="FOS\UserBundle\Form\Type\ChangePasswordFormType">
+      <tag name="form.type" alias="fos_user_change_password"/>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.resetting.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_resetting_form</argument>
+      <argument>fos_user_resetting</argument>
+      <argument type="collection">
+        <argument>ResetPassword</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.resetting.form.type" class="FOS\UserBundle\Form\Type\ResettingFormType">
+      <tag name="form.type" alias="fos_user_resetting"/>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.listener.resetting" class="FOS\UserBundle\EventListener\ResettingListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="router"/>
+      <argument>86400</argument>
+    </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
@@ -2888,6 +3854,10 @@
         <argument key="data_collector.router" type="collection">
           <argument>router</argument>
           <argument>@WebProfiler/Collector/router.html.twig</argument>
+        </argument>
+        <argument key="data_collector.translation" type="collection">
+          <argument>translation</argument>
+          <argument>@WebProfiler/Collector/translation.html.twig</argument>
         </argument>
         <argument key="data_collector.security" type="collection">
           <argument>security</argument>
@@ -3057,6 +4027,15 @@
       <argument type="service" id="templating.name_parser"/>
       <argument type="service" id="templating.locator"/>
     </service>
+    <service id="translator" class="Symfony\Component\Translation\DataCollectorTranslator">
+      <argument type="service">
+        <service class="Symfony\Component\Translation\LoggingTranslator" public="false">
+          <tag name="monolog.logger" channel="translation"/>
+          <argument type="service" id="translator.default"/>
+          <argument type="service" id="monolog.logger.translation"/>
+        </service>
+      </argument>
+    </service>
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
@@ -3092,7 +4071,14 @@
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="FOS\UserBundle\Model\UserInterface" type="collection">
+          <argument key="class">%security.encoder.bcrypt.class%</argument>
+          <argument key="arguments" type="collection">
+            <argument>13</argument>
+          </argument>
+        </argument>
+      </argument>
     </service>
     <service id="security.password_encoder" class="Symfony\Component\Security\Core\Encoder\UserPasswordEncoder">
       <argument type="service" id="security.encoder_factory"/>
@@ -3179,6 +4165,39 @@
         </service>
       </configurator>
     </service>
+    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\Mailer">
+      <argument type="service" id="swiftmailer.mailer.default"/>
+      <argument type="service" id="router"/>
+      <argument type="service" id="templating"/>
+      <argument type="collection">
+        <argument key="confirmation.template">FOSUserBundle:Registration:email.txt.twig</argument>
+        <argument key="resetting.template">FOSUserBundle:Resetting:email.txt.twig</argument>
+        <argument key="from_email" type="collection">
+          <argument key="confirmation" type="collection">
+            <argument key="webmaster@example.com">webmaster</argument>
+          </argument>
+          <argument key="resetting" type="collection">
+            <argument key="webmaster@example.com">webmaster</argument>
+          </argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="fos_user.util.email_canonicalizer" class="FOS\UserBundle\Util\Canonicalizer"/>
+    <service id="fos_user.util.token_generator" class="FOS\UserBundle\Util\TokenGenerator">
+      <argument type="service" id="logger" on-invalid="ignore"/>
+    </service>
+    <service id="fos_user.user_manager" class="FOS\UserBundle\Doctrine\UserManager">
+      <argument type="service" id="security.encoder_factory"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service">
+        <service class="Doctrine\ORM\EntityManager" public="false">
+          <argument>null</argument>
+          <factory service="doctrine" method="getManager"/>
+        </service>
+      </argument>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
     <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="service" id="templating.locator"/>
@@ -3216,6 +4235,18 @@
         <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp\www\my_project_web\src\Users\UserBundle/Resources/views</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\my_project_web\src\Users\UserBundle/Resources/views</argument>
+        <argument>UsersUser</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -3245,6 +4276,7 @@
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
     <service id="fm_elfinder.configurator" alias="fm_elfinder.configurator.default"/>
     <service id="fm_elfinder.loader" alias="fm_elfinder.loader.default"/>
+    <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
   </services>
 </container>
