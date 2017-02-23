@@ -1,6 +1,5 @@
 <?php 
-<<<<<<< HEAD
-=======
+
 namespace Symfony\Component\EventDispatcher
 {
 interface EventSubscriberInterface
@@ -265,7 +264,7 @@ $this->closed = false;
 }
 }
 }
->>>>>>> 1f575ec5710bda7872edd6bcfeadbabaa8ffe0c8
+
 namespace Symfony\Component\HttpFoundation\Session\Storage
 {
 use Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy;
@@ -333,8 +332,7 @@ ini_set('session.save_handler','files');
 }
 }
 }
-<<<<<<< HEAD
-=======
+
 namespace Symfony\Component\HttpFoundation\Session\Storage\Proxy
 {
 abstract class AbstractProxy
@@ -574,7 +572,7 @@ return $this->getBag($this->flashName);
 }
 }
 }
->>>>>>> 1f575ec5710bda7872edd6bcfeadbabaa8ffe0c8
+
 namespace Symfony\Bundle\FrameworkBundle\Templating
 {
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -632,7 +630,7 @@ return (bool) $this->container->getParameter('kernel.debug');
 }
 }
 }
-<<<<<<< HEAD
+
 namespace Symfony\Component\Routing\Generator
 {
 interface ConfigurableRequirementsInterface
@@ -664,7 +662,7 @@ $this->context = $context;
 $this->logger = $logger;
 }
 public function setContext(RequestContext $context)
-=======
+
 namespace Symfony\Component\Templating
 {
 interface TemplateReferenceInterface
@@ -911,7 +909,7 @@ $this->context = $context;
 $this->logger = $logger;
 }
 public function setContext(RequestContext $context)
->>>>>>> 1f575ec5710bda7872edd6bcfeadbabaa8ffe0c8
+
 {
 $this->context = $context;
 }
@@ -1073,7 +1071,7 @@ return''=== $path ||'/'=== $path[0]
 }
 }
 }
-<<<<<<< HEAD
+
 namespace Symfony\Component\Routing\Matcher
 {
 interface RedirectableUrlMatcherInterface
@@ -1201,7 +1199,7 @@ throw new \RuntimeException('Unable to use expressions as the Symfony Expression
 $this->expressionLanguage = new ExpressionLanguage(null, $this->expressionLanguageProviders);
 }
 return $this->expressionLanguage;
-=======
+
 namespace Symfony\Component\Routing
 {
 use Symfony\Component\HttpFoundation\Request;
@@ -1332,13 +1330,13 @@ public function setParameter($name, $parameter)
 {
 $this->parameters[$name] = $parameter;
 return $this;
->>>>>>> 1f575ec5710bda7872edd6bcfeadbabaa8ffe0c8
+
 }
 }
 }
 namespace Symfony\Component\Routing\Matcher
 {
-<<<<<<< HEAD
+
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Route;
 abstract class RedirectableUrlMatcher extends UrlMatcher implements RedirectableUrlMatcherInterface
@@ -2742,7 +2740,7 @@ namespace Doctrine\Common
 use Doctrine\Common\Lexer\AbstractLexer;
 abstract class Lexer extends AbstractLexer
 {
-=======
+
 use Symfony\Component\Routing\RequestContextAwareInterface;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
@@ -8804,7 +8802,7 @@ return array(
 KernelEvents::CONTROLLER =>'onKernelController',
 );
 }
->>>>>>> 1f575ec5710bda7872edd6bcfeadbabaa8ffe0c8
+
 }
 }
 namespace Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter
