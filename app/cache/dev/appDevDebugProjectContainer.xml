@@ -15,11 +15,11 @@
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="FMElfinderBundle">FM\ElfinderBundle\FMElfinderBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="GudetamaFranceBundle">GudetamaFranceBundle\GudetamaFranceBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
-      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="UsersUserBundle">Users\UserBundle\UsersUserBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -62,6 +62,11 @@
         <parameter key="path">C:\wamp\www\my_project_web\vendor\sensio\framework-extra-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
+      <parameter key="FOSUserBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle</parameter>
+        <parameter key="namespace">FOS\UserBundle</parameter>
+      </parameter>
       <parameter key="FMElfinderBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp\www\my_project_web\vendor\helios-ag\fm-elfinder-bundle</parameter>
@@ -81,11 +86,6 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp\www\my_project_web\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
-      </parameter>
-      <parameter key="FOSUserBundle" type="collection">
-        <parameter key="parent">null</parameter>
-        <parameter key="path">C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle</parameter>
-        <parameter key="namespace">FOS\UserBundle</parameter>
       </parameter>
       <parameter key="UsersUserBundle" type="collection">
         <parameter key="parent">FOSUserBundle</parameter>
@@ -120,10 +120,10 @@
     <parameter key="database_name">symfony</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
-    <parameter key="mailer_transport">smtp</parameter>
-    <parameter key="mailer_host">127.0.0.1</parameter>
-    <parameter key="mailer_user">null</parameter>
-    <parameter key="mailer_password">null</parameter>
+    <parameter key="mailer_transport">gmail</parameter>
+    <parameter key="mailer_host">null</parameter>
+    <parameter key="mailer_user">gudetamafrance@gmail.com</parameter>
+    <parameter key="mailer_password">projet_alixmut</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="brochures_directory">C:\wamp\www\my_project_web\app/../web/uploads/brochures</parameter>
     <parameter key="locale">fr</parameter>
@@ -431,12 +431,12 @@
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
     <parameter key="swiftmailer.mailer.default.delivery.enabled">true</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.host">127.0.0.1</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">gudetamafrance@gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password">projet_alixmut</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
@@ -570,6 +570,47 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="fos_user.backend_type_orm">true</parameter>
+    <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
+    <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
+    <parameter key="fos_user.resetting.email.template">FOSUserBundle:Resetting:email.txt.twig</parameter>
+    <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
+    <parameter key="fos_user.storage">orm</parameter>
+    <parameter key="fos_user.firewall_name">main</parameter>
+    <parameter key="fos_user.model_manager_name">null</parameter>
+    <parameter key="fos_user.model.user.class">Users\UserBundle\Entity\User</parameter>
+    <parameter key="fos_user.profile.form.type">fos_user_profile</parameter>
+    <parameter key="fos_user.profile.form.name">fos_user_profile_form</parameter>
+    <parameter key="fos_user.profile.form.validation_groups" type="collection">
+      <parameter>Profile</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.registration.confirmation.from_email" type="collection">
+      <parameter key="noreply@example.com">Demo App</parameter>
+    </parameter>
+    <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
+    <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
+    <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
+    <parameter key="fos_user.registration.form.validation_groups" type="collection">
+      <parameter>Registration</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.change_password.form.type">fos_user_change_password</parameter>
+    <parameter key="fos_user.change_password.form.name">fos_user_change_password_form</parameter>
+    <parameter key="fos_user.change_password.form.validation_groups" type="collection">
+      <parameter>ChangePassword</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.resetting.email.from_email" type="collection">
+      <parameter key="noreply@example.com">Demo App</parameter>
+    </parameter>
+    <parameter key="fos_user.resetting.token_ttl">86400</parameter>
+    <parameter key="fos_user.resetting.form.type">fos_user_resetting</parameter>
+    <parameter key="fos_user.resetting.form.name">fos_user_resetting_form</parameter>
+    <parameter key="fos_user.resetting.form.validation_groups" type="collection">
+      <parameter>ResetPassword</parameter>
+      <parameter>Default</parameter>
+    </parameter>
     <parameter key="fm_elfinder.loader">FM\ElfinderBundle\Loader\ElFinderLoader</parameter>
     <parameter key="fm_elfinder.configurator">FM\ElfinderBundle\Configuration\ElFinderConfigurationReader</parameter>
     <parameter key="elfinder.form.type.class">FM\ElfinderBundle\Form\Type\ElFinderType</parameter>
@@ -682,47 +723,6 @@
     <parameter key="knp_paginator.template.filtration">KnpPaginatorBundle:Pagination:filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">KnpPaginatorBundle:Pagination:sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">10</parameter>
-    <parameter key="fos_user.backend_type_orm">true</parameter>
-    <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
-    <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
-    <parameter key="fos_user.resetting.email.template">email/password_resetting.email.twig</parameter>
-    <parameter key="fos_user.registration.confirmation.template">@FOSUser/Registration/email.txt.twig</parameter>
-    <parameter key="fos_user.storage">orm</parameter>
-    <parameter key="fos_user.firewall_name">main</parameter>
-    <parameter key="fos_user.model_manager_name">null</parameter>
-    <parameter key="fos_user.model.user.class">Users\UserBundle\Entity\User</parameter>
-    <parameter key="fos_user.profile.form.type">fos_user_profile</parameter>
-    <parameter key="fos_user.profile.form.name">fos_user_profile_form</parameter>
-    <parameter key="fos_user.profile.form.validation_groups" type="collection">
-      <parameter>Profile</parameter>
-      <parameter>Default</parameter>
-    </parameter>
-    <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="registration@example.com">Demo Registration</parameter>
-    </parameter>
-    <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
-    <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
-    <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
-    <parameter key="fos_user.registration.form.validation_groups" type="collection">
-      <parameter>Registration</parameter>
-      <parameter>Default</parameter>
-    </parameter>
-    <parameter key="fos_user.change_password.form.type">fos_user_change_password</parameter>
-    <parameter key="fos_user.change_password.form.name">fos_user_change_password_form</parameter>
-    <parameter key="fos_user.change_password.form.validation_groups" type="collection">
-      <parameter>ChangePassword</parameter>
-      <parameter>Default</parameter>
-    </parameter>
-    <parameter key="fos_user.resetting.email.from_email" type="collection">
-      <parameter key="resetting@example.com">Demo Resetting</parameter>
-    </parameter>
-    <parameter key="fos_user.resetting.token_ttl">86400</parameter>
-    <parameter key="fos_user.resetting.form.type">fos_user_resetting</parameter>
-    <parameter key="fos_user.resetting.form.name">fos_user_resetting_form</parameter>
-    <parameter key="fos_user.resetting.form.validation_groups" type="collection">
-      <parameter>ResetPassword</parameter>
-      <parameter>Default</parameter>
-    </parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1150,6 +1150,7 @@
             <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Security\Core/Resources/translations\security.fr.xlf</argument>
             <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\FOSUserBundle.fr.yml</argument>
             <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/translations\validators.fr.yml</argument>
+            <argument>C:\wamp\www\my_project_web\src\Users\UserBundle/Resources/translations\FOSUserBundle.fr.yml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\wamp\www\my_project_web\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.gl.xlf</argument>
@@ -1651,8 +1652,6 @@
               <argument key="Symfony\Component\Form\Extension\Core\Type\CurrencyType">form.type.currency</argument>
               <argument key="entity">form.type.entity</argument>
               <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType">form.type.entity</argument>
-              <argument key="elfinder">fm_elfinder.form.type</argument>
-              <argument key="FM\ElfinderBundle\Form\Type\ElFinderType">fm_elfinder.form.type</argument>
               <argument key="fos_user_username">fos_user.username_form_type</argument>
               <argument key="FOS\UserBundle\Form\Type\UsernameFormType">fos_user.username_form_type</argument>
               <argument key="fos_user_profile">fos_user.profile.form.type</argument>
@@ -1663,6 +1662,8 @@
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
+              <argument key="elfinder">fm_elfinder.form.type</argument>
+              <argument key="FM\ElfinderBundle\Form\Type\ElFinderType">fm_elfinder.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -2420,7 +2421,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
-            <argument type="service" id="fos_user.user_provider.username"/>
+            <argument type="service" id="fos_user.user_provider.username_email"/>
             <argument type="service" id="security.user_checker.main"/>
             <argument>main</argument>
             <argument type="service" id="security.encoder_factory"/>
@@ -2436,7 +2437,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58aee9f90b93c6.66863923</argument>
+            <argument>58af100a7cbf92.30871715</argument>
           </service>
         </argument>
       </argument>
@@ -2666,7 +2667,7 @@
           <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
             <argument type="service" id="security.token_storage"/>
             <argument type="collection">
-              <argument type="service" id="fos_user.user_provider.username"/>
+              <argument type="service" id="fos_user.user_provider.username_email"/>
             </argument>
             <argument>main</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -2707,7 +2708,7 @@
               <argument type="service">
                 <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
                   <argument type="collection">
-                    <argument type="service" id="fos_user.user_provider.username"/>
+                    <argument type="service" id="fos_user.user_provider.username_email"/>
                   </argument>
                   <argument>ThisTokenIsNotSoSecretChangeIt</argument>
                   <argument>main</argument>
@@ -2801,7 +2802,7 @@
               <argument type="service">
                 <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
                   <argument type="collection">
-                    <argument type="service" id="fos_user.user_provider.username"/>
+                    <argument type="service" id="fos_user.user_provider.username_email"/>
                   </argument>
                   <argument>ThisTokenIsNotSoSecretChangeIt</argument>
                   <argument>main</argument>
@@ -2827,7 +2828,7 @@
             <argument type="service">
               <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
                 <argument type="collection">
-                  <argument type="service" id="fos_user.user_provider.username"/>
+                  <argument type="service" id="fos_user.user_provider.username_email"/>
                 </argument>
                 <argument>ThisTokenIsNotSoSecretChangeIt</argument>
                 <argument>main</argument>
@@ -2854,7 +2855,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58aee9f90b93c6.66863923</argument>
+            <argument>58af100a7cbf92.30871715</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3537,6 +3538,104 @@
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
     </service>
+    <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.user_checker.main"/>
+      <argument type="service" id="security.authentication.session_strategy"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="fos_user.user_provider.username_email" class="FOS\UserBundle\Security\EmailUserProvider" public="false">
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.listener.authentication" class="FOS\UserBundle\EventListener\AuthenticationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.security.login_manager"/>
+      <argument>main</argument>
+    </service>
+    <service id="fos_user.listener.flash" class="FOS\UserBundle\EventListener\FlashListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="session"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="fos_user.username_form_type" class="FOS\UserBundle\Form\Type\UsernameFormType">
+      <tag name="form.type" alias="fos_user_username"/>
+      <argument type="service">
+        <service class="FOS\UserBundle\Form\DataTransformer\UserToUsernameTransformer" public="false">
+          <argument type="service" id="fos_user.user_manager"/>
+        </service>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_profile_form</argument>
+      <argument>fos_user_profile</argument>
+      <argument type="collection">
+        <argument>Profile</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
+      <tag name="form.type" alias="fos_user_profile"/>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_registration_form</argument>
+      <argument>fos_user_registration</argument>
+      <argument type="collection">
+        <argument>Registration</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
+      <tag name="form.type" alias="fos_user_registration"/>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.listener.email_confirmation" class="FOS\UserBundle\EventListener\EmailConfirmationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.mailer"/>
+      <argument type="service" id="fos_user.util.token_generator"/>
+      <argument type="service" id="router"/>
+      <argument type="service" id="session"/>
+    </service>
+    <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_change_password_form</argument>
+      <argument>fos_user_change_password</argument>
+      <argument type="collection">
+        <argument>ChangePassword</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.change_password.form.type" class="FOS\UserBundle\Form\Type\ChangePasswordFormType">
+      <tag name="form.type" alias="fos_user_change_password"/>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.resetting.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_resetting_form</argument>
+      <argument>fos_user_resetting</argument>
+      <argument type="collection">
+        <argument>ResetPassword</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.resetting.form.type" class="FOS\UserBundle\Form\Type\ResettingFormType">
+      <tag name="form.type" alias="fos_user_resetting"/>
+      <argument>Users\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.listener.resetting" class="FOS\UserBundle\EventListener\ResettingListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="router"/>
+      <argument>86400</argument>
+    </service>
     <service id="fm_elfinder.configurator.default" class="FM\ElfinderBundle\Configuration\ElFinderConfigurationReader">
       <argument type="collection">
         <argument key="instances" type="collection">
@@ -3693,104 +3792,6 @@
     <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
-    </service>
-    <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="fos_user.user_manager"/>
-    </service>
-    <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
-      <argument type="service" id="security.token_storage"/>
-      <argument type="service" id="security.user_checker.main"/>
-      <argument type="service" id="security.authentication.session_strategy"/>
-      <argument type="service" id="service_container"/>
-    </service>
-    <service id="fos_user.user_provider.username" class="FOS\UserBundle\Security\UserProvider" public="false">
-      <argument type="service" id="fos_user.user_manager"/>
-    </service>
-    <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
-      <argument type="service" id="fos_user.user_manager"/>
-    </service>
-    <service id="fos_user.listener.authentication" class="FOS\UserBundle\EventListener\AuthenticationListener">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="fos_user.security.login_manager"/>
-      <argument>main</argument>
-    </service>
-    <service id="fos_user.listener.flash" class="FOS\UserBundle\EventListener\FlashListener">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="session"/>
-      <argument type="service" id="translator"/>
-    </service>
-    <service id="fos_user.username_form_type" class="FOS\UserBundle\Form\Type\UsernameFormType">
-      <tag name="form.type" alias="fos_user_username"/>
-      <argument type="service">
-        <service class="FOS\UserBundle\Form\DataTransformer\UserToUsernameTransformer" public="false">
-          <argument type="service" id="fos_user.user_manager"/>
-        </service>
-      </argument>
-    </service>
-    <service id="fos_user.profile.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
-      <argument type="service" id="form.factory"/>
-      <argument>fos_user_profile_form</argument>
-      <argument>fos_user_profile</argument>
-      <argument type="collection">
-        <argument>Profile</argument>
-        <argument>Default</argument>
-      </argument>
-    </service>
-    <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
-      <tag name="form.type" alias="fos_user_profile"/>
-      <argument>Users\UserBundle\Entity\User</argument>
-    </service>
-    <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
-      <argument type="service" id="form.factory"/>
-      <argument>fos_user_registration_form</argument>
-      <argument>fos_user_registration</argument>
-      <argument type="collection">
-        <argument>Registration</argument>
-        <argument>Default</argument>
-      </argument>
-    </service>
-    <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
-      <tag name="form.type" alias="fos_user_registration"/>
-      <argument>Users\UserBundle\Entity\User</argument>
-    </service>
-    <service id="fos_user.listener.email_confirmation" class="FOS\UserBundle\EventListener\EmailConfirmationListener">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="fos_user.mailer"/>
-      <argument type="service" id="fos_user.util.token_generator"/>
-      <argument type="service" id="router"/>
-      <argument type="service" id="session"/>
-    </service>
-    <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
-      <argument type="service" id="form.factory"/>
-      <argument>fos_user_change_password_form</argument>
-      <argument>fos_user_change_password</argument>
-      <argument type="collection">
-        <argument>ChangePassword</argument>
-        <argument>Default</argument>
-      </argument>
-    </service>
-    <service id="fos_user.change_password.form.type" class="FOS\UserBundle\Form\Type\ChangePasswordFormType">
-      <tag name="form.type" alias="fos_user_change_password"/>
-      <argument>Users\UserBundle\Entity\User</argument>
-    </service>
-    <service id="fos_user.resetting.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
-      <argument type="service" id="form.factory"/>
-      <argument>fos_user_resetting_form</argument>
-      <argument>fos_user_resetting</argument>
-      <argument type="collection">
-        <argument>ResetPassword</argument>
-        <argument>Default</argument>
-      </argument>
-    </service>
-    <service id="fos_user.resetting.form.type" class="FOS\UserBundle\Form\Type\ResettingFormType">
-      <tag name="form.type" alias="fos_user_resetting"/>
-      <argument>Users\UserBundle\Entity\User</argument>
-    </service>
-    <service id="fos_user.listener.resetting" class="FOS\UserBundle\EventListener\ResettingListener">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="router"/>
-      <argument>86400</argument>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -4134,26 +4135,26 @@
               </argument>
             </argument>
             <call method="setUsername">
-              <argument>null</argument>
+              <argument>gudetamafrance@gmail.com</argument>
             </call>
             <call method="setPassword">
-              <argument>null</argument>
+              <argument>projet_alixmut</argument>
             </call>
             <call method="setAuthMode">
-              <argument>null</argument>
+              <argument>login</argument>
             </call>
           </service>
         </argument>
       </argument>
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
       <call method="setHost">
-        <argument>127.0.0.1</argument>
+        <argument>smtp.gmail.com</argument>
       </call>
       <call method="setPort">
-        <argument>25</argument>
+        <argument>465</argument>
       </call>
       <call method="setEncryption">
-        <argument>null</argument>
+        <argument>ssl</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>
@@ -4168,21 +4169,19 @@
         </service>
       </configurator>
     </service>
-    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\TwigSwiftMailer">
+    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\Mailer">
       <argument type="service" id="swiftmailer.mailer.default"/>
       <argument type="service" id="router"/>
-      <argument type="service" id="twig"/>
+      <argument type="service" id="templating"/>
       <argument type="collection">
-        <argument key="template" type="collection">
-          <argument key="confirmation">@FOSUser/Registration/email.txt.twig</argument>
-          <argument key="resetting">email/password_resetting.email.twig</argument>
-        </argument>
+        <argument key="confirmation.template">FOSUserBundle:Registration:email.txt.twig</argument>
+        <argument key="resetting.template">FOSUserBundle:Resetting:email.txt.twig</argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="registration@example.com">Demo Registration</argument>
+            <argument key="noreply@example.com">Demo App</argument>
           </argument>
           <argument key="resetting" type="collection">
-            <argument key="resetting@example.com">Demo Resetting</argument>
+            <argument key="noreply@example.com">Demo App</argument>
           </argument>
         </argument>
       </argument>
@@ -4228,6 +4227,14 @@
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp\www\my_project_web\src\Users\UserBundle/Resources/views</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp\www\my_project_web\vendor\helios-ag\fm-elfinder-bundle/Resources/views</argument>
         <argument>FMElfinder</argument>
       </call>
@@ -4238,14 +4245,6 @@
       <call method="addPath">
         <argument>C:\wamp\www\my_project_web\vendor\knplabs\knp-paginator-bundle/Resources/views</argument>
         <argument>KnpPaginator</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\wamp\www\my_project_web\src\Users\UserBundle/Resources/views</argument>
-        <argument>FOSUser</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\wamp\www\my_project_web\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
-        <argument>FOSUser</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp\www\my_project_web\src\Users\UserBundle/Resources/views</argument>
@@ -4279,9 +4278,9 @@
     <service id="doctrine.orm.default_metadata_cache" alias="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
+    <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
     <service id="fm_elfinder.configurator" alias="fm_elfinder.configurator.default"/>
     <service id="fm_elfinder.loader" alias="fm_elfinder.loader.default"/>
-    <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
   </services>
 </container>

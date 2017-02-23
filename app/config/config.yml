@@ -117,20 +117,3 @@ fos_user:
     registration:
         confirmation:
             enabled: true
-            template: '@FOSUser/Registration/email.txt.twig'
-            from_email:
-                address: registration@example.com
-                sender_name: Demo Registration
-            
-    resetting:
-        email:
-            template: email/password_resetting.email.twig
-            from_email:
-                address: resetting@example.com
-                sender_name: Demo Resetting
-    service:
-        mailer: fos_user.mailer.twig_swift
-    
-                        
-            
-
