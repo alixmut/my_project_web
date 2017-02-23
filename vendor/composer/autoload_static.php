@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInite824efc199799865fd96f26941a843a7
 {
     public static $files = array (
-        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'ce89ac35a6c330c55f4710717db9ff78' => __DIR__ . '/..' . '/kriswallsmith/assetic/src/functions.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
@@ -58,16 +58,7 @@ class ComposerStaticInite824efc199799865fd96f26941a843a7
         ),
         'R' => 
         array (
-            'React\\Stream\\' => 13,
-            'React\\Socket\\' => 13,
-            'React\\SocketClient\\' => 19,
             'React\\Promise\\' => 14,
-            'React\\Http\\' => 11,
-            'React\\HttpClient\\' => 17,
-            'React\\EventLoop\\' => 16,
-            'React\\Dns\\' => 10,
-            'React\\ChildProcess\\' => 19,
-            'React\\Cache\\' => 12,
         ),
         'P' => 
         array (
@@ -200,45 +191,9 @@ class ComposerStaticInite824efc199799865fd96f26941a843a7
         array (
             0 => __DIR__ . '/..' . '/sensio/distribution-bundle',
         ),
-        'React\\Stream\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/stream/src',
-        ),
-        'React\\Socket\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/socket/src',
-        ),
-        'React\\SocketClient\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/socket-client/src',
-        ),
         'React\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/react/promise/src',
-        ),
-        'React\\Http\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/http/src',
-        ),
-        'React\\HttpClient\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/http-client/src',
-        ),
-        'React\\EventLoop\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/event-loop/src',
-        ),
-        'React\\Dns\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/dns/src',
-        ),
-        'React\\ChildProcess\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/child-process/src',
-        ),
-        'React\\Cache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/cache/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -357,13 +312,6 @@ class ComposerStaticInite824efc199799865fd96f26941a843a7
             'Google_' => 
             array (
                 0 => __DIR__ . '/..' . '/google/apiclient/src',
-            ),
-        ),
-        'E' => 
-        array (
-            'Evenement' => 
-            array (
-                0 => __DIR__ . '/..' . '/evenement/evenement/src',
             ),
         ),
         'D' => 
