@@ -7,6 +7,6 @@ parameters:
     database_password: null
     mailer_transport: gmail
     mailer_host: null
-    mailer_user: null
-    mailer_password: null
+    mailer_user: gudetamafrance@gmail.com
+    mailer_password: projet_alixmut
     secret: ThisTokenIsNotSoSecretChangeIt

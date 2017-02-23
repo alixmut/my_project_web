@@ -111,9 +111,6 @@ fos_user:
     db_driver: orm 
     firewall_name: main
     user_class: Users\UserBundle\Entity\User
-    from_email:
-        address: noreply@example.com
-        sender_name: Demo App
     registration:
         confirmation:
             enabled: true
