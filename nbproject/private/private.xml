@@ -5,8 +5,10 @@
         <group>
             <file>file:/C:/wamp/www/my_project_web/app/config/parameters.yml</file>
             <file>file:/C:/wamp/www/my_project_web/README.md</file>
+            <file>file:/C:/wamp/www/my_project_web/app/config/config.yml</file>
             <file>file:/C:/wamp/www/my_project_web/src/Users/UserBundle/Resources/translations/FOSUserBundle.fr.yml</file>
             <file>file:/C:/wamp/www/my_project_web/app/AppKernel.php</file>
+            <file>file:/C:/wamp/www/my_project_web/app/cache/dev/classes.php</file>
         </group>
     </open-files>
 </project-private>
