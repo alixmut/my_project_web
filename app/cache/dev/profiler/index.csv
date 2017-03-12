@@ -105,3 +105,8 @@ adc9c0,::1,GET,http://localhost/my_project_web/web/app_dev.php/register/,1489321
 9596df,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321413,,404
 efdd00,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321414,01dc2a,200
 01dc2a,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321414,,404
+de400d,::1,GET,http://localhost/my_project_web/web/app_dev.php/,1489321561,,200
+17aadc,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321564,35bfd4,200
+e94de6,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321564,abf244,200
+35bfd4,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321564,,404
+abf244,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321564,,404
