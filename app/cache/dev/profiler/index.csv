@@ -91,3 +91,17 @@ c987fe,::1,GET,http://localhost/my_project_web/web/app_dev.php/,1489315359,,200
 9a97c5,::1,GET,http://localhost/my_project_web/web/app_dev.php/register,1489315363,,301
 354ccb,::1,GET,http://localhost/my_project_web/web/app_dev.php/register,1489315364,,301
 87d1bb,::1,GET,http://localhost/my_project_web/web/app_dev.php/register/,1489315367,,200
+53cefb,::1,GET,http://localhost/my_project_web/web/app_dev.php/,1489321384,,200
+e8cfe8,::1,GET,http://localhost/my_project_web/web/app_dev.php/,1489321386,,200
+12a521,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321389,d861bc,200
+9488e2,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321389,8902e7,200
+d861bc,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321389,,404
+8902e7,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321389,,404
+c080ae,::1,GET,http://localhost/my_project_web/web/app_dev.php/register,1489321398,,301
+adc9c0,::1,GET,http://localhost/my_project_web/web/app_dev.php/register/,1489321405,,200
+20631e,::1,GET,http://localhost/my_project_web/web/app_dev.php/register,1489321406,,301
+267477,::1,GET,http://localhost/my_project_web/web/app_dev.php/register/,1489321409,,200
+5f4c77,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321413,9596df,200
+9596df,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321413,,404
+efdd00,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321414,01dc2a,200
+01dc2a,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321414,,404
