@@ -110,3 +110,8 @@ de400d,::1,GET,http://localhost/my_project_web/web/app_dev.php/,1489321561,,200
 e94de6,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321564,abf244,200
 35bfd4,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489321564,,404
 abf244,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489321564,,404
+1c5d94,::1,GET,http://localhost/my_project_web/web/app_dev.php/,1489323977,,200
+cc354b,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489323980,b4b5e6,200
+d6a410,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489323980,3317dc,200
+b4b5e6,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r2.jpg,1489323980,,404
+3317dc,::1,GET,http://localhost/my_project_web/web/app_dev.php/images/r1.jpg,1489323980,,404
