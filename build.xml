@@ -41,7 +41,7 @@
   </target>
 
   <target name="lint" description="Perform syntax check of sourcecode files">
-    <apply executable="php" failonerror="true">
+    <apply executable="php">
     <arg value="-l" />
     <fileset dir="${sourcedir}">
       <include name="**/*.php" />
@@ -138,14 +138,14 @@
   </target>
 
   <target name="vendors" description="Update vendors">
-    <exec executable="php" failonerror="true">
+    <exec executable="php">
         <arg value="composer.phar" />
         <arg value="update" />
     </exec>
   </target>
 
   <target name="parameters" description="Copy parameters">
-    <exec executable="cp" failonerror="true">
+    <exec executable="cp">
       <arg path="app/config/parameters.jenkins.yml" />
       <arg path="app/config/parameters.yml" />
     </exec>
