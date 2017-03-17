@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="Lazyprojet" default="build">
-  <property name="workspace" value="${basedir}" />
-  <property name="sourcedir" value="${basedir}/src" />
+  <property name="workspace" value="." />
+  <property name="sourcedir" value="src" />
   <property name="builddir" value="${workspace}/app/build" />
 
   <target name="build"
@@ -42,13 +42,13 @@
 
   <target name="lint" description="Perform syntax check of sourcecode files">
     <apply executable="php">
-    <arg value="-l" />
-    <fileset dir="${sourcedir}">
-      <include name="**/*.php" />
-    </fileset>
-    <fileset dir="src/">
-      <include name="**/*Test.php" />
-    </fileset>
+		<arg value="-l" />
+		<fileset dir="${sourcedir}">
+		  <include name="**/*.php" />
+		</fileset>
+		<fileset dir="src/">
+		  <include name="**/*Test.php" />
+		</fileset>
     </apply>
   </target>
 
@@ -71,7 +71,7 @@
 
   <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
     <exec executable="phpmd">
-      <arg path="${basedir}/src" />
+      <arg path="src" />
       <arg value="text" />
       <arg value="${workspace}/app/phpmd.xml" />
     </exec>
@@ -120,7 +120,7 @@
   <target name="phpunit" description="Run unit tests with PHPUnit">
     <exec executable="phpunit">
       <arg value="-c" />
-      <arg path="${basedir}/app/phpunit.xml" />
+      <arg path="/app/phpunit.xml" />
     </exec>
   </target>
 
