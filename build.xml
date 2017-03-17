@@ -46,7 +46,7 @@
     <fileset dir="${sourcedir}">
       <include name="**/*.php" />
     </fileset>
-    <fileset dir="${basedir}/src/">
+    <fileset dir="src/">
       <include name="**/*Test.php" />
     </fileset>
     </apply>
