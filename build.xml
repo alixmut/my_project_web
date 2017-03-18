@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="Lazyprojet" default="build">
-  <property name="workspace" value="${basedir}" />
-  <property name="sourcedir" value="${basedir}/src" />
+  <property name="workspace" value="." />
+  <property name="sourcedir" value="src" />
   <property name="builddir" value="${workspace}/app/build" />
 
   <target name="build"
@@ -41,16 +41,14 @@
   </target>
 
   <target name="lint" description="Perform syntax check of sourcecode files">
-    <apply executable="php" failonerror="true">
-    <arg value="-l" />
-    <fileset dir="${sourcedir}">
-      <include name="**/*.php" />
-      <modified />
-    </fileset>
-    <fileset dir="${basedir}/src/">
-      <include name="**/*Test.php" />
-      <modified />
-    </fileset>
+    <apply executable="php">
+		<arg value="-l" />
+		<fileset dir="${sourcedir}">
+		  <include name="**/*.php" />
+		</fileset>
+		<fileset dir="src/">
+		  <include name="**/*Test.php" />
+		</fileset>
     </apply>
   </target>
 
@@ -73,7 +71,7 @@
 
   <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
     <exec executable="phpmd">
-      <arg path="${basedir}/src" />
+      <arg path="src" />
       <arg value="text" />
       <arg value="${workspace}/app/phpmd.xml" />
     </exec>
@@ -120,9 +118,12 @@
   </target>
 
   <target name="phpunit" description="Run unit tests with PHPUnit">
-    <exec executable="phpunit" failonerror="true">
+    <exec executable="phpunit">
       <arg value="-c" />
-      <arg path="${basedir}/app/phpunit.xml" />
+      <arg path="/app/phpunit.xml" />
+	  <arg line="--coverage-clover app/build/logs/clover.xml
+                --coverage-html app/build/logs/
+                ."/>
     </exec>
   </target>
 
@@ -138,21 +139,16 @@
   </target>
 
   <target name="vendors" description="Update vendors">
-    <exec executable="php" failonerror="true">
+    <exec executable="php">
         <arg value="composer.phar" />
         <arg value="update" />
     </exec>
   </target>
 
   <target name="parameters" description="Copy parameters">
-    <exec executable="cp" failonerror="true">
+    <exec executable="cp">
       <arg path="app/config/parameters.jenkins.yml" />
       <arg path="app/config/parameters.yml" />
     </exec>
   </target>
-
-<<<<<<< HEAD
 </project>
-=======
-</project>
->>>>>>> 9d450592ad996a7bea8e2ef0cd7c86fba7105a67
