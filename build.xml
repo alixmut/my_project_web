@@ -121,6 +121,9 @@
     <exec executable="phpunit">
       <arg value="-c" />
       <arg path="/app/phpunit.xml" />
+	  <arg line="--coverage-clover app/build/logs/clover.xml
+                --coverage-html app/build/logs/
+                ."/>
     </exec>
   </target>
 
