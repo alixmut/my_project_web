@@ -1,0 +1,5 @@
+projectKey=my_project_web
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/my_project_web
+ceTaskId=AVrhoXxSXnE_ez6JIKqE
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVrhoXxSXnE_ez6JIKqE
